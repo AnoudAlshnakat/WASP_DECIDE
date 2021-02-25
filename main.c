@@ -5,7 +5,7 @@
 NUMPOINTS = 10;
 int main()
 {
-   //LIC0
+  //LIC0
   /*
    NUMPOINTS = 5;
   PARAMETERS.LENGTH1 = 2;
@@ -33,7 +33,7 @@ int main()
  
  */
 
-/*
+  /*
   PARAMETERS.RADIUS1 = 3;
   
   X[0] = 1;
@@ -72,6 +72,42 @@ int main()
 */
 
 
+PARAMETERS.EPSILON =39;
+
+  X[0] = 3;
+  X[1] = 1;
+  X[2] = 1;
+  X[3] = 1;
+  X[4] = 1;
+  X[5] = 1;
+  X[6] = 3;
+  X[7] = 1;
+  X[8] = 1;
+  X[9] = 1;
+
+  Y[0] = 1;
+  Y[1] = 1;
+  Y[2] = 1;
+  Y[3] = 1;
+  Y[4] = 3;
+  Y[5] = 1;
+  Y[6] = 1;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+
+  boolean a2 = LIC_2(PARAMETERS.EPSILON);
+
+    if (a2 == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
 
   return 0;
 }
+
+
