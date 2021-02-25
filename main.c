@@ -71,7 +71,7 @@ int main()
   }
 */
 
-
+/*
 PARAMETERS.EPSILON =39;
 
   X[0] = 3;
@@ -106,7 +106,7 @@ PARAMETERS.EPSILON =39;
   {
     printf("failed \n");
   }
-
+*/
   return 0;
 }
 
