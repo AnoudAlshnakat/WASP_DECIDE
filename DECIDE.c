@@ -2,6 +2,12 @@
 #include <math.h>
 #include <stdio.h>
 
+
+/************************************************************
+LIC_0: 
+There exists at least one set of two consecutive data points 
+that are a distance greater than the length, LENGTH1, apart.
+************************************************************/
 boolean LIC_0(void)
 {
     double diff_x, diff_y, distance;
