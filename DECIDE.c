@@ -2,7 +2,6 @@
 #include <math.h>
 #include <stdio.h>
 
-
 /************************************************************
 LIC_0: 
 There exists at least one set of two consecutive data points 
@@ -33,3 +32,13 @@ boolean LIC_0(void)
     }
     return 0;
 }
+
+double length(x1, y1, x2, y2)
+{
+    double diff_x = x1 - x2;
+    double diff_y = y1 - y2;
+    double len = sqrt(pow(diff_x, 2) + pow(diff_y, 2));
+    return len;
+}
+
+
