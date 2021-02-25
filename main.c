@@ -33,7 +33,41 @@ int main()
  
  */
 
+  PARAMETERS.RADIUS1 = 3;
+  
+  X[0] = 1;
+  X[1] = 1;
+  X[2] = 1;
+  X[3] = 1;
+  X[4] = 1;
+  X[5] = 1;
+  X[6] = 1;
+  X[7] = 1;
+  X[8] = 1;
+  X[9] = 1;
 
+  Y[0] = 1;
+  Y[1] = 1;
+  Y[2] = 1;
+  Y[3] = 1;
+  Y[4] = 1;
+  Y[5] = 1;
+  Y[6] = 1;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+
+
+  boolean a = LIC_1(PARAMETERS.RADIUS1);
+
+  if (a == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
 
 
 
