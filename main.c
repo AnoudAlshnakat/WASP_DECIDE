@@ -20,7 +20,7 @@ int main()
   Y[3] = 11;
   Y[4] = 11;
 
-
+  boolean a = LIC_0();
 
   return 0;
 }
