@@ -137,7 +137,12 @@ boolean LIC_2(Eps)
 
 
 
-
+/************************************************************
+LIC_3: 
+3. There exists at least one set of three consecutive data points 
+that are the vertices of a triangle with area greater than AREA1.
+(0 ≤ AREA1)
+************************************************************/
 boolean LIC_3(p_area)
 {
     
