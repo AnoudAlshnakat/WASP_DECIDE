@@ -7,7 +7,7 @@ LIC_0:
 There exists at least one set of two consecutive data points 
 that are a distance greater than the length, LENGTH1, apart.
 ************************************************************/
-boolean LIC_0(void)
+boolean LIC_0(double p_len)
 {
     double diff_x, diff_y, distance;
     int i = 0;
@@ -18,7 +18,7 @@ boolean LIC_0(void)
         diff_y = Y[i] - Y[i + 1];
         distance = sqrt((diff_x * diff_x) + (diff_y * diff_y));
 
-        switch (DOUBLECOMPARE(distance, PARAMETERS.LENGTH1))
+        switch (DOUBLECOMPARE(distance, p_len))
         {
 
         case GT:
@@ -33,6 +33,8 @@ boolean LIC_0(void)
     return 0;
 }
 
+
+
 double length(x1, y1, x2, y2)
 {
     double diff_x = x1 - x2;
@@ -40,5 +42,6 @@ double length(x1, y1, x2, y2)
     double len = sqrt(pow(diff_x, 2) + pow(diff_y, 2));
     return len;
 }
+
 
 
