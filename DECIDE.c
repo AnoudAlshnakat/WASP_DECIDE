@@ -95,3 +95,18 @@ boolean LIC_1(double p_rad)
     printf("here 2 measured_r %f \n", measured_r);
     return 0;
 }
+
+
+
+double calculate_angle(x1, x2, x3, y1, y2, y3)
+{
+  double angle12_inRadian, angle23_inRadian, diff_rad;
+  angle12_inRadian = atan2(x1 - x2, y1 - y2); //find angle 1 in rad with respect to the +x axis
+  angle23_inRadian = atan2(x3 - x2, y3 - y2); //find angle 2 in rad with respect to the +x axis
+  
+  diff_rad = angle23_inRadian - angle12_inRadian;
+  diff_rad *= 180 / PI; //convert from rad to degrees
+  return diff_rad;
+} 
+
+
