@@ -110,3 +110,20 @@ double calculate_angle(x1, x2, x3, y1, y2, y3)
 } 
 
 
+boolean LIC_2(Eps)
+{
+    int i;
+    double ang;
+    for (i = 0; i < (NUMPOINTS - 2); i++)
+    {
+        ang = calculate_angle(X[i], X[i + 1], X[i + 2], Y[i], Y[i + 1], Y[i + 2]);
+
+        printf("here 2 measured_r %f \n", ang);
+
+        if ((DOUBLECOMPARE(ang, (PI - Eps)) == LT) || (DOUBLECOMPARE(ang, (PI + Eps)) == GT))
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
