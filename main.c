@@ -33,6 +33,7 @@ int main()
  
  */
 
+/*
   PARAMETERS.RADIUS1 = 3;
   
   X[0] = 1;
@@ -68,7 +69,7 @@ int main()
   {
     printf("failed \n");
   }
-
+*/
 
 
 
