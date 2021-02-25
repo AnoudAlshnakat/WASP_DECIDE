@@ -36,11 +36,7 @@ boolean LIC_0(double p_len)
 
 
 
-/************************************************************
-LIC_1: 
-There exists at least one set of three consecutive data points
-that cannot all be contained within or on a circle of radius RADIUS1.
-************************************************************/
+
 
 double length(x1, y1, x2, y2)
 {
@@ -50,7 +46,11 @@ double length(x1, y1, x2, y2)
     return len;
 }
 
-
+/************************************************************
+LIC_1: 
+There exists at least one set of three consecutive data points
+that cannot all be contained within or on a circle of radius RADIUS1.
+************************************************************/
 boolean LIC_1(double p_rad)
 {
     int i;
