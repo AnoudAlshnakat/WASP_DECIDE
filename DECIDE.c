@@ -134,3 +134,36 @@ boolean LIC_2(Eps)
     }
     return 0;
 }
+
+
+
+
+boolean LIC_3(p_area)
+{
+    
+    int i;
+    double len1, len2, len3; //triengles sides length
+    double sp, a;            //semi parameter and area of the tringle
+    
+    printf("area %d \n", p_area);
+    for (i = 0; i < (NUMPOINTS - 2); i++)
+    {
+
+        //calculate the length which is the distance between all the points, to form a tringle
+        len1 = length(X[i], Y[i], X[i + 1], Y[i + 1]);
+        len2 = length(X[i + 1], Y[i + 1], X[i + 2], Y[i + 2]);
+        len3 = length(X[i + 2], Y[i + 2], X[i], Y[i]);
+
+        //calculaute the semi-perimeter of the tringle
+        sp = (len1 + len2 + len3) / 2;
+
+        //area of tringle
+        a = sqrt(sp * (sp - len1) * (sp - len2) * (sp - len3));
+
+        if (DOUBLECOMPARE(a,  p_area) == GT)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
