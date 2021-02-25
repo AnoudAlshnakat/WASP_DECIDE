@@ -107,5 +107,6 @@ static inline COMPTYPE DOUBLECOMPARE(double A, double B)
 // function you must write
 void DECIDE(void);
 boolean LIC_0(void);
+boolean LIC_1(void);
 
 //////////// end of file /////////////
