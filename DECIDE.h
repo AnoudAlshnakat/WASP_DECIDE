@@ -63,11 +63,11 @@ PARAMETERS_T PARAMETERS;
 static PARAMETERS_T PARAMETERS2;
 
 // X coordinates of data points
-COORDINATE X;
+COORDINATE X [];
 static COORDINATE X2;
 
 // Y coordinates of data points
-COORDINATE Y;
+COORDINATE Y [];
 static COORDINATE Y2;
 
 // Number of data points -planar data points
