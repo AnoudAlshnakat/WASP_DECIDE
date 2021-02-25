@@ -110,6 +110,13 @@ double calculate_angle(x1, x2, x3, y1, y2, y3)
 } 
 
 
+
+/************************************************************
+LIC_2: 
+There exists at least one set of three consecutive data points 
+which form an angle such that: 
+angle < (PI−EPSILON) or angle > (PI+EPSILON)
+************************************************************/
 boolean LIC_2(Eps)
 {
     int i;
