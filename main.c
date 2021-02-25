@@ -22,5 +22,14 @@ int main()
 
   boolean a = LIC_0();
 
+  if (a == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+
   return 0;
 }
