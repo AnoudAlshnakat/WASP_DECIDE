@@ -172,3 +172,18 @@ boolean LIC_3(p_area)
     }
     return 0;
 }
+
+ 
+
+boolean LIC_5()
+{
+    int i;
+    for (i = 0; i < NUMPOINTS - 1; i++)
+    {
+        if (DOUBLECOMPARE(X[i + 1] - X[i], 0) == LT)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
