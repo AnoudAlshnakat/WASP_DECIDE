@@ -38,8 +38,8 @@ boolean LIC_0(double p_len)
 
 
 
-double length(x1, y1, x2, y2)
-{
+double length(double x1, double y1, double x2, double y2)
+{   
     double diff_x = x1 - x2;
     double diff_y = y1 - y2;
     double len = sqrt(pow(diff_x, 2) + pow(diff_y, 2));
