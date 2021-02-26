@@ -67,7 +67,8 @@ int main()
     Y[4]=0;
   P.Y = Y;
 
-  if (LIC_1(1) == 1)
+
+  if (LIC_1() == 1)
   {
     printf("passed \n");
   }

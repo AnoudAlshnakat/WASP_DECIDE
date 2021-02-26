@@ -51,7 +51,7 @@ LIC_1:
 There exists at least one set of three consecutive data points
 that cannot all be contained within or on a circle of radius RADIUS1.
 ************************************************************/
-boolean LIC_1(double p_rad)
+boolean LIC_1()
 {
     int i;
     double len1,len2,len3;          //triengles sides length
@@ -83,7 +83,7 @@ boolean LIC_1(double p_rad)
             measured_r= len1*len2*len3/(4*a);
         } 
          
-        if (DOUBLECOMPARE(measured_r, p_rad) == GT) 
+        if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
         {
             printf("here 1 measured_r %f \n", measured_r);
              return 1;
