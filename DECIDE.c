@@ -237,6 +237,7 @@ boolean LIC_4(qPts, nQuad)
 
 }
 
+
 /************************************************************
 LIC_5: 
 There exists at least one set of two consecutive data points, 
@@ -248,7 +249,7 @@ boolean LIC_5()
     int i;
     for (i = 0; i < NUMPOINTS - 1; i++)
     {
-        if (DOUBLECOMPARE(X[i + 1] - X[i], 0) == LT)
+        if (DOUBLECOMPARE((P.X[i + 1]) - (P.X[i]), 0) == LT)
         {
             return 1;
         }
