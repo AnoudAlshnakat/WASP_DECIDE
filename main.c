@@ -8,8 +8,9 @@ NUMPOINTS = 5;
 
 
 int main()
-{
+{  /*
   //LIC0
+
     static double x[5] = {5,3,5,8};
     static double y[5] = {9,7,10,11};
   P.X=x;
@@ -25,7 +26,7 @@ int main()
   {
     printf("failed \n");
   }
- 
+ */
 
 
   /*
