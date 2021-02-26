@@ -117,7 +117,7 @@ There exists at least one set of three consecutive data points
 which form an angle such that: 
 angle < (PI−EPSILON) or angle > (PI+EPSILON)
 ************************************************************/
-boolean LIC_2()
+boolean LIC_2(Eps)
 {
     int i;
     double ang;
@@ -125,9 +125,13 @@ boolean LIC_2()
     {
         ang = calculate_angle(P.X[i], P.X[i + 1], P.X[i + 2], P.Y[i], P.Y[i + 1], P.Y[i + 2]);
 
-        printf("here 2 measured_r %f \n", ang);
+        printf("PI - PARAMETERS.EPSILON %f \n", PI - PARAMETERS.EPSILON);
 
-        if ((DOUBLECOMPARE(ang, (PI - Eps)) == LT) || (DOUBLECOMPARE(ang, (PI + Eps)) == GT))
+        if (isnan(ang))
+        {
+            
+        }
+        else if (((DOUBLECOMPARE(ang, (PI - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (PI + PARAMETERS.EPSILON)) == GT)))
         {
             return 1;
         }
