@@ -147,7 +147,7 @@ PARAMETERS.AREA1 = 2;
   }
   */
 
-
+/*
   X[0] = 1;
   X[1] = 1;
   X[2] = 1;
@@ -169,7 +169,7 @@ PARAMETERS.AREA1 = 2;
   {
     printf("failed \n");
   }
-
+*/
   return 0;
 }
 
