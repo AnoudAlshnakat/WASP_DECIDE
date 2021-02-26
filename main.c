@@ -107,7 +107,8 @@ PARAMETERS.EPSILON =39;
     printf("failed \n");
   }
 */
-  
+
+ /* 
 PARAMETERS.AREA1 = 2;
 
   X[0] = 3;
@@ -137,6 +138,30 @@ PARAMETERS.AREA1 = 2;
   boolean a3 = LIC_3(PARAMETERS.AREA1);
 
   if (a3 == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+  */
+
+
+  X[0] = 1;
+  X[1] = 1;
+  X[2] = 1;
+  X[3] = 1;
+  X[4] = 1;
+  X[5] = 1;
+  X[6] = 1;
+  X[7] = 1;
+  X[8] = 1;
+  X[9] = 1;
+
+  boolean a5 = LIC_5();
+
+    if (a5 == 1)
   {
     printf("passed \n");
   }
