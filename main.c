@@ -28,7 +28,7 @@ int main()
   }
  */
 
-  /**************LIC0**************/
+  /**************LIC1**************/
  //passing test
 /*
   PARAMETERS.RADIUS1 = 3;
@@ -50,7 +50,7 @@ int main()
 */
 
 //failing test
-  PARAMETERS.RADIUS1 = 1;
+/*  PARAMETERS.RADIUS1 = 1;
     double X[5];
     X[0]=1;
     X[1]=2;
@@ -76,16 +76,50 @@ int main()
   {
     printf("failed \n");
   }
+*/
 
+  /**************LIC2**************/
 
-/*
-PARAMETERS.EPSILON =39;
+//PARAMETERS.EPSILON =39;
+//passing test
+/* double X[5];
+    X[0]=0;
+    X[1]=0;
+    X[2]=1;
+    X[3]=2;
+    X[4]=3;
 
+    P.X = X;
 
+    double Y[5];
+    Y[0]=1;
+    Y[1]=0;
+    Y[2]=0;
+    Y[3]=0;
+    Y[4]=3;
+    P.Y = Y;
+    PARAMETERS.EPSILON=1; */
 
-  boolean a2 = LIC_2(PARAMETERS.EPSILON);
+//failing test
+ double X[5];
+    X[0]=0;
+    X[1]=0;
+    X[2]=0;
+    X[3]=0;
+    X[4]=3;
 
-    if (a2 == 1)
+    P.X = X;
+
+    double Y[3];
+    Y[0]=0;
+    Y[1]=0;
+    Y[2]=0;
+    Y[3]=0;
+    Y[4]=3;
+    P.Y = Y;
+    PARAMETERS.EPSILON=0.000001;
+
+    if (LIC_2() == 1)
   {
     printf("passed \n");
   }
@@ -93,7 +127,8 @@ PARAMETERS.EPSILON =39;
   {
     printf("failed \n");
   }
-*/
+
+
 
  /* 
 PARAMETERS.AREA1 = 2;
