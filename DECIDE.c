@@ -100,14 +100,12 @@ boolean LIC_1()
 
 double calculate_angle(x1, x2, x3, y1, y2, y3)
 {
-  double angle12_inRadian, angle23_inRadian, diff_rad;
-  angle12_inRadian = atan2(x1 - x2, y1 - y2); //find angle 1 in rad with respect to the +x axis
-  angle23_inRadian = atan2(x3 - x2, y3 - y2); //find angle 2 in rad with respect to the +x axis
-  
-  diff_rad = angle23_inRadian - angle12_inRadian;
-  diff_rad *= 180 / PI; //convert from rad to degrees
-  return diff_rad;
+     double p1_c = sqrt(pow(x2-x1,2)+ pow(y2-y1,2)); // from first point to teh base  
+    double p2_c = sqrt(pow(x2-x3,2)+ pow(y2-y3,2)); // from second point to the base
+    double p1_2 = sqrt(pow(x3-x1,2)+ pow(y3-y1,2)); // from point 1 to point 2
+    return acos((p2_c*p2_c+p1_c*p1_c-p1_2*p1_2)/(2*p2_c*p1_c));
 } 
+
 
 
 
