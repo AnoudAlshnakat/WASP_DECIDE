@@ -176,25 +176,61 @@ boolean LIC_3(p_area)
 
 
 
-which_quad(x, y)
+which_quad(x,y)
 {
-    if ((DOUBLECOMPARE(x, 0) == GT) || (DOUBLECOMPARE(x, 0) == EQ))
-    {
-        if (DOUBLECOMPARE(y, 0) == GT)
-            return 1;
+        if ((DOUBLECOMPARE(x,0) == GT) || (DOUBLECOMPARE(x,0) == EQ)) 
+          {  if (DOUBLECOMPARE(y,0) == GT)
+             return 1;
+             else
+             return 4;
+          }
         else
-            return 4;
-    }
-    else
-    {
-        if ((DOUBLECOMPARE(y, 0) == GT) || (DOUBLECOMPARE(y, 0) == EQ))
-            return 2;
-        else
-            return 3;
-    }
+        { if ((DOUBLECOMPARE(y,0) == GT) || (DOUBLECOMPARE(y,0) == EQ))
+             return 2;
+             else
+             return 3;
+
+        }
 }
 
+boolean LIC_4(qPts, nQuad)
+{   int i,j;
+    boolean Q [4]= {0,0,0,0};
+    printf("qPts %d \n", qPts);
+     printf("nQuad %d \n", nQuad);
+    if ((2 > qPts || qPts > NUMPOINTS) || (nQuad>3 ||nQuad<1  )) {
+            return 0;
+        }
+        
+    for(i=0 ; i <= NUMPOINTS-qPts ; i++)
+    {   
+        for(j=0 ; j < qPts ; j++)
+        { 
+            int index = j+i;
+            
+            switch (which_quad (X[index],Y[index]))
+          {  case 1:
+              Q[0]=1;
+              break;
+            case 2:
+              Q[1]=1;
+              break;
+            case 3:
+              Q[2]=1;
+              break;
+            case 4:
+              Q[3]=1;
+              break;}    
+        }
+        if(Q[0]==1 && Q[1]==1 && Q[2]==1 && Q[3]==1){
+            return 1;
+        }
+     
+    } 
+    return 0;   
 
+
+}
 
 /************************************************************
 LIC_5: 
