@@ -175,6 +175,27 @@ boolean LIC_3(p_area)
 
 
 
+
+which_quad(x, y)
+{
+    if ((DOUBLECOMPARE(x, 0) == GT) || (DOUBLECOMPARE(x, 0) == EQ))
+    {
+        if (DOUBLECOMPARE(y, 0) == GT)
+            return 1;
+        else
+            return 4;
+    }
+    else
+    {
+        if ((DOUBLECOMPARE(y, 0) == GT) || (DOUBLECOMPARE(y, 0) == EQ))
+            return 2;
+        else
+            return 3;
+    }
+}
+
+
+
 /************************************************************
 LIC_5: 
 There exists at least one set of two consecutive data points, 
