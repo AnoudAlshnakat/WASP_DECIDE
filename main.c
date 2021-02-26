@@ -8,9 +8,9 @@ NUMPOINTS = 5;
 
 
 int main()
-{  /*
-  //LIC0
-
+{  
+  /**************LIC0**************/
+/*
     static double x[5] = {5,3,5,8};
     static double y[5] = {9,7,10,11};
   P.X=x;
@@ -28,36 +28,46 @@ int main()
   }
  */
 
-
-  /*
+  /**************LIC0**************/
+ //passing test
+/*
   PARAMETERS.RADIUS1 = 3;
-  
-  X[0] = 1;
-  X[1] = 1;
-  X[2] = 1;
-  X[3] = 1;
-  X[4] = 1;
-  X[5] = 1;
-  X[6] = 1;
-  X[7] = 1;
-  X[8] = 1;
-  X[9] = 1;
+    double X[5];
+    X[0]=3;
+    X[1]=5;
+    X[2]=10;
+    X[3]=1;
+    X[4]=2;
+  P.X = X;
 
-  Y[0] = 1;
-  Y[1] = 1;
-  Y[2] = 1;
-  Y[3] = 1;
-  Y[4] = 1;
-  Y[5] = 1;
-  Y[6] = 1;
-  Y[7] = 1;
-  Y[8] = 1;
-  Y[9] = 1;
+  double Y[5];
+    Y[0]=3;
+    Y[1]=7;
+    Y[2]=19;
+    Y[3]=4;
+    Y[4]=50;
+  P.Y = Y;
+*/
 
+//failing test
+  PARAMETERS.RADIUS1 = 1;
+    double X[5];
+    X[0]=1;
+    X[1]=2;
+    X[2]=3;
+    X[3]=4;
+    X[4]=5;
+  P.X = X;
 
-  boolean a = LIC_1(PARAMETERS.RADIUS1);
+  double Y[5];
+    Y[0]=0;
+    Y[1]=0;
+    Y[2]=0;
+    Y[3]=0;
+    Y[4]=0;
+  P.Y = Y;
 
-  if (a == 1)
+  if (LIC_1(1) == 1)
   {
     printf("passed \n");
   }
@@ -65,32 +75,12 @@ int main()
   {
     printf("failed \n");
   }
-*/
+
 
 /*
 PARAMETERS.EPSILON =39;
 
-  X[0] = 3;
-  X[1] = 1;
-  X[2] = 1;
-  X[3] = 1;
-  X[4] = 1;
-  X[5] = 1;
-  X[6] = 3;
-  X[7] = 1;
-  X[8] = 1;
-  X[9] = 1;
 
-  Y[0] = 1;
-  Y[1] = 1;
-  Y[2] = 1;
-  Y[3] = 1;
-  Y[4] = 3;
-  Y[5] = 1;
-  Y[6] = 1;
-  Y[7] = 1;
-  Y[8] = 1;
-  Y[9] = 1;
 
   boolean a2 = LIC_2(PARAMETERS.EPSILON);
 
