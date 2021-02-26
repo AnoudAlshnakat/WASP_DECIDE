@@ -117,7 +117,7 @@ There exists at least one set of three consecutive data points
 which form an angle such that: 
 angle < (PI−EPSILON) or angle > (PI+EPSILON)
 ************************************************************/
-boolean LIC_2(Eps)
+boolean LIC_2()
 {
     int i;
     double ang;

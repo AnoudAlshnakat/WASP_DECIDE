@@ -115,7 +115,7 @@ static inline COMPTYPE DOUBLECOMPARE(double A, double B)
 void DECIDE(void);
 boolean LIC_0(double);
 boolean LIC_1();
-boolean LIC_2(int);
+boolean LIC_2();
 boolean LIC_3(int);
 boolean LIC_4(int,int);
 boolean LIC_5(void);
