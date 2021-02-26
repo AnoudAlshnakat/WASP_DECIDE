@@ -111,4 +111,5 @@ boolean LIC_1(double);
 boolean LIC_2(int);
 boolean LIC_3(int);
 
+boolean LIC_5(void);
 //////////// end of file /////////////
