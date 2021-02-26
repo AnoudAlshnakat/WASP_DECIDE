@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
-NUMPOINTS = 10;
+
+
+NUMPOINTS = 5;
+
+
 int main()
 {
   //LIC0
@@ -211,8 +215,20 @@ int nQuad = PARAMETERS.QUADS;
     printf("failed \n");
   }
 */
+  
+  
+  
+  static double x[5] = {0,1,2,0};
+  P.X=x;
 
-
+    if (LIC_5() == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
 
   return 0;
 }
