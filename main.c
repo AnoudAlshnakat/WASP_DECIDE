@@ -10,20 +10,11 @@ NUMPOINTS = 5;
 int main()
 {
   //LIC0
-  /*
-   NUMPOINTS = 5;
-  PARAMETERS.LENGTH1 = 2;
-  X[0] = 5;
-  X[1] = 3;
-  X[2] = 5;
-  X[3] = 8;
-  X[4] = 6;
-  Y[0] = 9;
-  Y[1] = 7;
-  Y[2] = 10;
-  Y[3] = 11;
-  Y[4] = 11;
-
+    static double x[5] = {5,3,5,8};
+    static double y[5] = {9,7,10,11};
+  P.X=x;
+  P.Y=y;
+  PARAMETERS.LENGTH1 = 100;
   boolean a = LIC_0(PARAMETERS.LENGTH1);
 
     if (a == 1)
@@ -35,7 +26,7 @@ int main()
     printf("failed \n");
   }
  
- */
+
 
   /*
   PARAMETERS.RADIUS1 = 3;
@@ -216,9 +207,9 @@ int nQuad = PARAMETERS.QUADS;
   }
 */
   
+  /*
   
-  
-  static double x[5] = {0,1,2,0};
+   x[5] = {0,1,2,0};
   P.X=x;
 
     if (LIC_5() == 1)
@@ -229,7 +220,7 @@ int nQuad = PARAMETERS.QUADS;
   {
     printf("failed \n");
   }
-
+*/
   return 0;
 }
 
