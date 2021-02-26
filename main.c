@@ -147,7 +147,7 @@ PARAMETERS.AREA1 = 2;
   }
   */
 
-
+/*
 PARAMETERS.Q_PTS = 2;
 PARAMETERS.QUADS = 2;
 int qPts = PARAMETERS.Q_PTS;
@@ -185,7 +185,7 @@ int nQuad = PARAMETERS.QUADS;
   {
     printf("failed \n");
   }
-
+*/
 
 
 /*
