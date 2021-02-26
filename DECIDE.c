@@ -14,8 +14,8 @@ boolean LIC_0(double p_len)
 
     while (i < NUMPOINTS)
     {
-        diff_x = X[i] - X[i + 1];
-        diff_y = Y[i] - Y[i + 1];
+        diff_x = P.X[i] - P.X[i + 1];
+        diff_y = P.Y[i] - P.Y[i + 1];
         distance = sqrt((diff_x * diff_x) + (diff_y * diff_y));
 
         switch (DOUBLECOMPARE(distance, p_len))
@@ -63,9 +63,9 @@ boolean LIC_1(double p_rad)
     {
         //calculate the length which is the distance between all the points, to form a tringle
             
-        len1 = length(X[i],Y[i],X[i+1],Y[i+1]); 
-        len2 = length(X[i+1],Y[i+1],X[i+2],Y[i+2]);
-        len3 = length(X[i+2],Y[i+2],X[i],Y[i]);
+        len1 = length(P.X[i],P.Y[i],P.X[i+1],P.Y[i+1]); 
+        len2 = length(P.X[i+1],P.Y[i+1],P.X[i+2],P.Y[i+2]);
+        len3 = length(P.X[i+2],P.Y[i+2],P.X[i],P.Y[i]);
     
        //calculaute the semi-perimeter of the tringle
         sp = (len1 + len2 + len3)/2;
@@ -123,7 +123,7 @@ boolean LIC_2(Eps)
     double ang;
     for (i = 0; i < (NUMPOINTS - 2); i++)
     {
-        ang = calculate_angle(X[i], X[i + 1], X[i + 2], Y[i], Y[i + 1], Y[i + 2]);
+        ang = calculate_angle(P.X[i], P.X[i + 1], P.X[i + 2], P.Y[i], P.Y[i + 1], P.Y[i + 2]);
 
         printf("here 2 measured_r %f \n", ang);
 
@@ -155,9 +155,9 @@ boolean LIC_3(p_area)
     {
 
         //calculate the length which is the distance between all the points, to form a tringle
-        len1 = length(X[i], Y[i], X[i + 1], Y[i + 1]);
-        len2 = length(X[i + 1], Y[i + 1], X[i + 2], Y[i + 2]);
-        len3 = length(X[i + 2], Y[i + 2], X[i], Y[i]);
+        len1 = length(P.X[i], P.Y[i], P.X[i + 1], P.Y[i + 1]);
+        len2 = length(P.X[i + 1], P.Y[i + 1], P.X[i + 2], P.Y[i + 2]);
+        len3 = length(P.X[i + 2], P.Y[i + 2], P.X[i], P.Y[i]);
 
         //calculaute the semi-perimeter of the tringle
         sp = (len1 + len2 + len3) / 2;
@@ -213,7 +213,7 @@ boolean LIC_4(qPts, nQuad)
         { 
             int index = j+i;
             
-            switch (which_quad (X[index],Y[index]))
+            switch (which_quad (P.X[index],P.Y[index]))
           {  case 1:
               Q[0]=1;
               break;
@@ -236,7 +236,6 @@ boolean LIC_4(qPts, nQuad)
 
 
 }
-
 
 /************************************************************
 LIC_5: 
