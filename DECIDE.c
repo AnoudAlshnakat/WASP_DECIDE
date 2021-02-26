@@ -193,6 +193,11 @@ which_quad(x,y)
         }
 }
 
+/************************************************************
+LIC_4: 
+There exists at least one set of Q PTS consecutive data 
+points that lie in more than QUADS quadrants.
+************************************************************/
 boolean LIC_4(qPts, nQuad)
 {   int i,j;
     boolean Q [4]= {0,0,0,0};
