@@ -236,6 +236,8 @@ PARAMETERS.QUADS = 2;
   P.Y = Y;
 */
 
+//failing test case
+/*
 PARAMETERS.Q_PTS = 1;
 PARAMETERS.QUADS = 1;
   double X[10];
@@ -272,10 +274,12 @@ PARAMETERS.QUADS = 1;
   {
     printf("failed \n");
   }
+  */
 
 
-
-/*
+ /**************LIC5**************/
+//failing test
+/*  double X[10];
   X[0] = 1;
   X[1] = 1;
   X[2] = 1;
@@ -286,23 +290,24 @@ PARAMETERS.QUADS = 1;
   X[7] = 1;
   X[8] = 1;
   X[9] = 1;
-
-  boolean a5 = LIC_5();
-
-    if (a5 == 1)
-  {
-    printf("passed \n");
-  }
-  else
-  {
-    printf("failed \n");
-  }
+   P.X = X;
 */
-  
-  /*
-  
-   x[5] = {0,1,2,0};
-  P.X=x;
+
+
+//passing test
+double X[10];
+  X[0] = 1;
+  X[1] = 3;
+  X[2] = 6;
+  X[3] = 7;
+  X[4] = 9;
+  X[5] = 10;
+  X[6] = 14;
+  X[7] = 15;
+  X[8] = 12;
+  X[9] = 0;
+   P.X = X;
+
 
     if (LIC_5() == 1)
   {
@@ -312,7 +317,7 @@ PARAMETERS.QUADS = 1;
   {
     printf("failed \n");
   }
-*/
+
   return 0;
 }
 
