@@ -116,7 +116,7 @@ void DECIDE(void);
 boolean LIC_0(double);
 boolean LIC_1();
 boolean LIC_2();
-boolean LIC_3(int);
+boolean LIC_3();
 boolean LIC_4(int,int);
 boolean LIC_5(void);
 //////////// end of file /////////////

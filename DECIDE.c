@@ -115,7 +115,7 @@ There exists at least one set of three consecutive data points
 which form an angle such that: 
 angle < (PI−EPSILON) or angle > (PI+EPSILON)
 ************************************************************/
-boolean LIC_2(Eps)
+boolean LIC_2()
 {
     int i;
     double ang;
@@ -145,14 +145,16 @@ LIC_3:
 that are the vertices of a triangle with area greater than AREA1.
 (0 ≤ AREA1)
 ************************************************************/
-boolean LIC_3(p_area)
+boolean LIC_3()
 {
     
     int i;
     double len1, len2, len3; //triengles sides length
     double sp, a;            //semi parameter and area of the tringle
     
-    printf("area %d \n", p_area);
+
+
+    if ( 0 > PARAMETERS.AREA1) return 0;
     for (i = 0; i < (NUMPOINTS - 2); i++)
     {
 
@@ -167,7 +169,7 @@ boolean LIC_3(p_area)
         //area of tringle
         a = sqrt(sp * (sp - len1) * (sp - len2) * (sp - len3));
 
-        if (DOUBLECOMPARE(a,  p_area) == GT)
+        if (DOUBLECOMPARE(a,  PARAMETERS.AREA1) == GT)
         {
             return 1;
         }
