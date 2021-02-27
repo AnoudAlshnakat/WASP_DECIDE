@@ -202,35 +202,36 @@ LIC_4:
 There exists at least one set of Q PTS consecutive data 
 points that lie in more than QUADS quadrants.
 ************************************************************/
-boolean LIC_4(qPts, nQuad)
+boolean LIC_4()
 {   int i,j;
-    boolean Q [4]= {0,0,0,0};
-    printf("qPts %d \n", qPts);
-     printf("nQuad %d \n", nQuad);
-    if ((2 > qPts || qPts > NUMPOINTS) || (nQuad>3 ||nQuad<1  )) {
+    boolean Q[4]= {0,0,0,0};
+    printf("qPts %d \n", PARAMETERS.Q_PTS);
+     printf("nQuad %d \n", PARAMETERS.QUADS);
+    if ((2 > PARAMETERS.Q_PTS || PARAMETERS.Q_PTS > NUMPOINTS) || (PARAMETERS.QUADS>3 ||PARAMETERS.QUADS<1  )) {
             return 0;
         }
         
-    for(i=0 ; i <= NUMPOINTS-qPts ; i++)
+    for(i=0 ; i <= NUMPOINTS-PARAMETERS.Q_PTS ; i++)
     {   
-        for(j=0 ; j < qPts ; j++)
+        for(j=0 ; j < PARAMETERS.Q_PTS ; j++)
         { 
             int index = j+i;
             
             switch (which_quad (P.X[index],P.Y[index]))
           {  case 1:
               Q[0]=1;
-              break;
+              
             case 2:
               Q[1]=1;
-              break;
+              
             case 3:
               Q[2]=1;
-              break;
+              
             case 4:
               Q[3]=1;
-              break;}    
+              }     
         }
+        printf("Q0 %d, Q1 %d, Q2 %d , Q3 %d  \n", Q[0] , Q[1], Q[2], Q[3] );
         if(Q[0]==1 && Q[1]==1 && Q[2]==1 && Q[3]==1){
             return 1;
         }
