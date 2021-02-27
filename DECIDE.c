@@ -109,6 +109,7 @@ double calculate_angle(x1, x2, x3, y1, y2, y3)
 
 
 
+
 /************************************************************
 LIC_2: 
 There exists at least one set of three consecutive data points 
@@ -427,9 +428,37 @@ boolean LIC_8(){
     printf("here 2 measured_r %f \n", measured_r);
     return 0;
 
+}
 
 
+
+boolean LIC_9()
+{    
+    if(NUMPOINTS < 5)return 0;
+    if (PARAMETERS.C_PTS<1 || PARAMETERS.D_PTS<1) return 0;
+    if ((PARAMETERS.C_PTS + PARAMETERS.D_PTS) > (NUMPOINTS -3)) return 0;
+
+    int i;
+    double ang;
+    for (i = 0; i < (NUMPOINTS - PARAMETERS.C_PTS - PARAMETERS.D_PTS - 2); i++)
+    {
+        ang = calculate_angle(P.X[i], P.X[i + PARAMETERS.C_PTS +1], P.X[i +  PARAMETERS.C_PTS + PARAMETERS.D_PTS + 2], 
+                              P.Y[i], P.Y[i + PARAMETERS.C_PTS +1], P.Y[i +  PARAMETERS.C_PTS + PARAMETERS.D_PTS + 2]);
+
+          printf("ang %f \n", ang);
+        if (isnan(ang))
+        {
+            
+        }
+        else if (((DOUBLECOMPARE(ang, (PI - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (PI + PARAMETERS.EPSILON)) == GT)))
+        {
+            return 1;
+        }
+    }
+    return 0;
 
 }
+
+
 
 
