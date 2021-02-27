@@ -263,8 +263,16 @@ boolean LIC_5()
 
 
 
-
-
+/************************************************************
+LIC_6: 
+There exists at least one set of N PTS consecutive data points 
+such that at least one of the points lies a distance greater 
+than DIST from the line joining the first and last of these 
+N PTS points. If the first and last points of these N PTS are 
+identical, then the calculated distance to compare with DIST 
+will be the distance from the coincident point to all other 
+points of the N PTS consecutive points.
+************************************************************/
 boolean LIC_6()
 {   
     int i = 0,j;
