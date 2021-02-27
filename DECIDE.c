@@ -337,3 +337,29 @@ boolean LIC_6()
     return 0;
 
 }
+
+
+
+
+boolean LIC_7( )
+{   
+    int i;
+    double dist;
+
+
+    if (NUMPOINTS<3) return 0;
+    if ((PARAMETERS.K_PTS > (NUMPOINTS -2) ) || PARAMETERS.K_PTS<1) return 0;
+    
+     
+    for (i=0; i < (NUMPOINTS - PARAMETERS.K_PTS -1); i++){
+        dist = length(P.X[i], P.Y[i], P.X[i+PARAMETERS.K_PTS +1], P.Y[i+PARAMETERS.K_PTS +1]);
+        if (DOUBLECOMPARE(dist, PARAMETERS.LENGTH1) == GT){
+            return 1;
+        }
+
+    }
+    return 0;
+
+}
+
+
