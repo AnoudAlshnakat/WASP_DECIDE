@@ -295,6 +295,7 @@ PARAMETERS.QUADS = 1;
 
 
 //passing test
+/*
 double X[10];
   X[0] = 1;
   X[1] = 3;
@@ -317,6 +318,80 @@ double X[10];
   {
     printf("failed \n");
   }
+*/
+
+
+ /**************LIC6**************/
+ //failing test case 
+ double X[10];
+  X[0] = 1;
+  X[1] = 2;
+  X[2] = 3;
+  X[3] = 4;
+  X[4] = 5;
+  X[5] = 6;
+  X[6] = 7;
+  X[7] = 8;
+  X[8] = 9;
+  X[9] = 10;
+  P.X = X;
+
+
+ double Y[10];
+  Y[0] = 1;
+  Y[1] = 1;
+  Y[2] = 1;
+  Y[3] = 1;
+  Y[4] = 1;
+  Y[5] = 1;
+  Y[6] = 1;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+  P.Y = Y;
+    PARAMETERS.DIST= 1;    
+  PARAMETERS.N_PTS= 3; 
+
+ 
+/*  //failing test case
+  double X[10];
+  X[0] = 1;
+  X[1] = 2;
+  X[2] = 3;
+  X[3] = 4;
+  X[4] = 5;
+  X[5] = 6;
+  X[6] = 7;
+  X[7] = 8;
+  X[8] = 9;
+  X[9] = 10;
+  P.X = X;
+
+
+ double Y[10];
+  Y[0] = 1;
+  Y[1] = 13;
+  Y[2] = 1;
+  Y[3] = 1;
+  Y[4] = 1;
+  Y[5] = 1;
+  Y[6] = 1;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+  P.Y = Y; 
+    PARAMETERS.DIST= 1;    
+  PARAMETERS.N_PTS= 3; 
+*/
+      if (LIC_6() == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+
 
   return 0;
 }
