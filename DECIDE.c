@@ -260,3 +260,72 @@ boolean LIC_5()
     }
     return 0;
 }
+
+
+
+
+
+boolean LIC_6()
+{   
+    int i = 0,j;
+    int start_p, end_p;
+    double dst_coinc;
+    double height, area, sp;
+    double len1,len2,len3;
+    
+     if (NUMPOINTS < 3) return 0;
+     
+     if (((3 > PARAMETERS.N_PTS || PARAMETERS.N_PTS > NUMPOINTS) || (0 > PARAMETERS.DIST))) return 0;
+
+
+    for (i = 0 ; i <= NUMPOINTS - PARAMETERS.N_PTS ; i++ )
+    {
+        start_p = i;
+        end_p = i+ PARAMETERS.N_PTS -1; 
+       
+        //if the first point equals to the last point
+       if ( ((DOUBLECOMPARE( P.X[start_p], P.X[end_p] )) == EQ) && (DOUBLECOMPARE(P.Y[start_p],P.Y[end_p])==EQ)  )
+        {     
+           for(j = 1 ; j > PARAMETERS.N_PTS-1 ; j++)
+           {   //distance from the coincident point to all other points
+               dst_coinc = length(P.X[start_p],P.Y[start_p],P.X[start_p+j],P.Y[start_p+j]);
+               //compare with DIST, should return 1 when it is larger.
+               if (DOUBLECOMPARE(dst_coinc, PARAMETERS.DIST) == GT)  
+               {
+                   return 1;
+               }
+           }
+        }
+        else
+        { 
+            for(j = 1 ; j < PARAMETERS.N_PTS-1 ; j++)
+            {
+                len1 = length(P.X[start_p],P.Y[start_p],P.X[end_p],P.Y[end_p]); //the base of the trangle
+                len2 = length(P.X[end_p],P.Y[end_p],P.X[start_p+j],P.Y[start_p+j]);
+                len3 = length(P.X[start_p+j],P.Y[start_p+j],P.X[start_p],P.Y[start_p]);
+    
+                //calculaute the semi-perimeter of the tringle
+                sp = (len1 + len2 + len3)/2;
+
+                //area of tringle
+                area = sqrt(sp*(sp-len1)*(sp-len2)*(sp-len3));
+
+                //height of tringle, which is the distance beween the ponnt and the base line
+                height = (area * 2) / len1;
+                if(DOUBLECOMPARE(height, PARAMETERS.DIST) == GT)
+                {
+                    return 1;
+                }
+
+                
+            }
+            
+
+        }
+
+    }
+
+
+    return 0;
+
+}
