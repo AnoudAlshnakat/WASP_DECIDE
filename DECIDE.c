@@ -367,8 +367,13 @@ boolean LIC_7( )
 
 }
 
-
-
+/************************************************************
+LIC_8: 
+There exists at least one set of three data points separated 
+by exactly A PTS and B PTS consecutive intervening points, 
+respectively, that cannot be contained within or on a circle 
+of radius RADIUS1.The condition is not met when NUMPOINTS < 5.
+************************************************************/
 boolean LIC_8(){
     if (NUMPOINTS<5) return 0;
     if (PARAMETERS.A_PTS<1 || PARAMETERS.B_PTS<1) return 0;
