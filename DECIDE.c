@@ -431,7 +431,13 @@ boolean LIC_8(){
 }
 
 
-
+/************************************************************
+LIC_9: 
+There exists at least one set of three data points separated 
+by exactly C PTS and D PTS consecutive intervening points, 
+respectively, that form an angle such that:
+angle < (PI−EPSILON) or angle > (PI+EPSILON)
+************************************************************/
 boolean LIC_9()
 {    
     if(NUMPOINTS < 5)return 0;
