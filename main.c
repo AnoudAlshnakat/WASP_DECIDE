@@ -3,8 +3,11 @@
 #include <string.h>
 
 
+//LIC1, LIC2 , LIC0
+//NUMPOINTS = 5;
 
-NUMPOINTS = 5;
+//LIC3
+NUMPOINTS = 10;
 
 
 int main()
@@ -80,7 +83,7 @@ int main()
 
   /**************LIC2**************/
 
-//PARAMETERS.EPSILON =39;
+
 //passing test
 /* double X[5];
     X[0]=0;
@@ -101,7 +104,7 @@ int main()
     PARAMETERS.EPSILON=1; */
 
 //failing test
- double X[5];
+/* double X[5];
     X[0]=0;
     X[1]=0;
     X[2]=0;
@@ -127,12 +130,11 @@ int main()
   {
     printf("failed \n");
   }
-
-
-
- /* 
-PARAMETERS.AREA1 = 2;
-
+*/
+  /**************LIC2**************/
+  //passing
+  /*
+  double X[10];
   X[0] = 3;
   X[1] = 1;
   X[2] = 1;
@@ -143,7 +145,9 @@ PARAMETERS.AREA1 = 2;
   X[7] = 1;
   X[8] = 1;
   X[9] = 1;
+  P.X = X;
 
+  double Y[10];
   Y[0] = 1;
   Y[1] = 1;
   Y[2] = 1;
@@ -154,12 +158,41 @@ PARAMETERS.AREA1 = 2;
   Y[7] = 1;
   Y[8] = 1;
   Y[9] = 1;
+  P.Y = Y;
+  PARAMETERS.AREA1 = 3;
+  */
+
+//failing test
+ double X[10];
+  X[0] = -1;
+  X[1] = 0;
+  X[2] = 1;
+  X[3] = 1;
+  X[4] = 5;
+  X[5] = 1;
+  X[6] = 3;
+  X[7] = 1;
+  X[8] = 1;
+  X[9] = 1;
+  P.X = X;
+
+  double Y[10];
+  Y[0] = 0;
+  Y[1] = 0;
+  Y[2] = 0;
+  Y[3] = 1;
+  Y[4] = 3;
+  Y[5] = 1;
+  Y[6] = 6;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+  P.Y = Y;
+  PARAMETERS.AREA1 = -1;
 
   
-  PARAMETERS.AREA1 = 100;
-  boolean a3 = LIC_3(PARAMETERS.AREA1);
 
-  if (a3 == 1)
+  if (LIC_3() == 1)
   {
     printf("passed \n");
   }
@@ -167,7 +200,7 @@ PARAMETERS.AREA1 = 2;
   {
     printf("failed \n");
   }
-  */
+
 
 /*
 PARAMETERS.Q_PTS = 2;
