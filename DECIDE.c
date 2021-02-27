@@ -339,8 +339,13 @@ boolean LIC_6()
 }
 
 
-
-
+/************************************************************
+LIC_7: 
+There exists at least one set of two data points separated by 
+exactly K PTS consecutive in- tervening points that are a 
+distance greater than the length, LENGTH1, apart. 
+The condition is not met when NUMPOINTS < 3
+************************************************************/
 boolean LIC_7( )
 {   
     int i;
