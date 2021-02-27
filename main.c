@@ -131,7 +131,7 @@ int main()
     printf("failed \n");
   }
 */
-  /**************LIC2**************/
+  /**************LIC3**************/
   //passing
   /*
   double X[10];
@@ -163,7 +163,7 @@ int main()
   */
 
 //failing test
- double X[10];
+/* double X[10];
   X[0] = -1;
   X[1] = 0;
   X[2] = 1;
@@ -200,14 +200,15 @@ int main()
   {
     printf("failed \n");
   }
+*/
 
+ /**************LIC4**************/
 
+//passing test
 /*
 PARAMETERS.Q_PTS = 2;
 PARAMETERS.QUADS = 2;
-int qPts = PARAMETERS.Q_PTS;
-int nQuad = PARAMETERS.QUADS;
-
+  double X[10];
   X[0] = 3;
   X[1] = -1;
   X[2] = 1;
@@ -218,7 +219,10 @@ int nQuad = PARAMETERS.QUADS;
   X[7] = 1;
   X[8] = 1;
   X[9] = 1;
+  P.X = X;
 
+
+ double Y[10];
   Y[0] = 1;
   Y[1] = 1;
   Y[2] = -1;
@@ -229,10 +233,38 @@ int nQuad = PARAMETERS.QUADS;
   Y[7] = 1;
   Y[8] = 1;
   Y[9] = 1;
+  P.Y = Y;
+*/
 
-  boolean a4 = LIC_4( qPts, nQuad);
+PARAMETERS.Q_PTS = 1;
+PARAMETERS.QUADS = 1;
+  double X[10];
+  X[0] = 3;
+  X[1] = 1;
+  X[2] = 1;
+  X[3] = 1;
+  X[4] = 5;
+  X[5] = 1;
+  X[6] = 3;
+  X[7] = 1;
+  X[8] = 1;
+  X[9] = 1;
+  P.X = X;
 
-  if (a4 == 1)
+
+ double Y[10];
+  Y[0] = 1;
+  Y[1] = 1;
+  Y[2] = 1;
+  Y[3] = 1;
+  Y[4] = 3;
+  Y[5] = 1;
+  Y[6] = 6;
+  Y[7] = 1;
+  Y[8] = 1;
+  Y[9] = 1;
+  P.Y = Y;
+  if (LIC_4() == 1)
   {
     printf("passed \n");
   }
@@ -240,7 +272,7 @@ int nQuad = PARAMETERS.QUADS;
   {
     printf("failed \n");
   }
-*/
+
 
 
 /*
