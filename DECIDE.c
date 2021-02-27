@@ -368,3 +368,63 @@ boolean LIC_7( )
 }
 
 
+
+boolean LIC_8(){
+    if (NUMPOINTS<5) return 0;
+    if (PARAMETERS.A_PTS<1 || PARAMETERS.B_PTS<1) return 0;
+    if ((PARAMETERS.A_PTS + PARAMETERS.B_PTS) > (NUMPOINTS -3)) return 0;
+
+
+    int i;
+    double len1,len2,len3;          //triengles sides length
+    double sp,a ;                   //semi parameter and area of the tringle
+    double measured_r ;             //measured radius
+
+
+    for (i=0; i < NUMPOINTS - PARAMETERS.A_PTS - PARAMETERS.B_PTS -2 ; i++) 
+    {
+        //calculate the length which is the distance between all the points, to form a tringle
+            
+        len1 = length(P.X[i],  P.Y[i],
+                     P.X[i + PARAMETERS.A_PTS + 1],   P.Y[i + PARAMETERS.A_PTS + 1]); 
+
+        len2 = length(P.X[i + PARAMETERS.A_PTS + 1],   P.Y[i + PARAMETERS.A_PTS + 1],
+                     P.X[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS+2],   P.Y[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS+2]);
+
+        len3 = length(P.X[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS+2],   P.Y[i+ PARAMETERS.A_PTS + PARAMETERS.B_PTS +2],
+                      P.X[i],  P.Y[i]);
+    
+       //calculaute the semi-perimeter of the tringle
+        sp = (len1 + len2 + len3)/2;
+
+        //area of tringle
+        a = sqrt(sp*(sp-len1)*(sp-len2)*(sp-len3));
+
+        if (DOUBLECOMPARE(a, 0)==EQ) 
+        {
+            measured_r= fmax(len1,len2);
+            measured_r= fmax(measured_r,len2);
+        } 
+        else
+        {   //circle circumscribing a triangle is r = len1 len2 len3 / (4* tringle area)
+            measured_r= len1*len2*len3/(4*a);
+        } 
+         
+        if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
+        {
+            printf("here 1 measured_r %f \n", measured_r);
+             return 1;
+        } 
+
+
+
+    }
+    printf("here 2 measured_r %f \n", measured_r);
+    return 0;
+
+
+
+
+}
+
+
