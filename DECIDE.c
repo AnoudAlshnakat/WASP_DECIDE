@@ -801,6 +801,18 @@ void generate_PUM()
 
 
 
+boolean row_true (int row)
+{
+    for (int j = 0; j < 15; j++) 
+    {
+        if(PUM[row][j] == 0)  return  0;
+    }
+return 1;
+}
+
+
+
+
 void DECIDE(void)
 {
 generate_CMV();
