@@ -745,9 +745,11 @@ boolean LIC_14()
 
 }
 
-
-void DECIDE(void)
-{ //condition met vector initlisation
+/*
+function to generate the Conditions Met Vector (CMV)
+*/
+void generate_CMV()
+{ 
     CMV[0] = LIC_0();
     CMV[1] = LIC_1();
     CMV[2] = LIC_2();
@@ -763,9 +765,11 @@ void DECIDE(void)
     CMV[12] = LIC_12();
     CMV[13] = LIC_13();
     CMV[14] = LIC_14();
+}
 
-
-
+void DECIDE(void)
+{
+generate_LCM();
 
 
 }
