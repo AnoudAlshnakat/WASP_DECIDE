@@ -848,6 +848,7 @@ void launch_or_not ()
 void DECIDE(void)
 {
 generate_CMV();
-
-
+generate_PUM();
+generate_FUV();
+launch_or_not();
 }
