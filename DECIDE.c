@@ -767,6 +767,40 @@ void generate_CMV()
     CMV[14] = LIC_14();
 }
 
+
+/*
+function to generate the Preliminary Unlocking Matrix (PUM)
+*/
+void generate_PUM()
+{
+    int i,j;
+    boolean cond1 =0, cond2=0;
+    for(i = 0 ; i < 15 ; i++)
+    {
+        for(j = 0 ; j < 15 ; j++)
+        {
+           if (LCM[i][j] == ANDD) 
+           {
+              cond1= CMV[i];
+              cond2= CMV[j];
+              PUM[i][j] = cond1 && cond2;
+           }
+           else if (LCM[i][j] == ORR)
+           {
+              cond1= CMV[i];
+              cond2= CMV[j];              
+            PUM[i][j] = cond1 || cond2;
+           } 
+           else 
+           {
+            PUM[i][j] = 1;
+           }
+        }
+    }
+}
+
+
+
 void DECIDE(void)
 {
 generate_CMV();
