@@ -599,3 +599,76 @@ boolean LIC_12()
      {return 1;};  
 
 }
+
+
+
+
+
+
+boolean LIC_13()
+{
+    if(NUMPOINTS < 5) return 0;
+    if(PARAMETERS.RADIUS2 < 0) return 0;
+
+        int i;
+    double len1,len2,len3;          //triengles sides length
+    double sp,a ;                   //semi parameter and area of the tringle
+    double measured_r ;             //measured radius
+    boolean cond1 = 0 , cond2 = 0;
+
+
+    for (i=0; i < NUMPOINTS - PARAMETERS.A_PTS - PARAMETERS.B_PTS -2 ; i++) 
+    {
+        //calculate the length which is the distance between all the points, to form a tringle
+            
+        len1 = length(P.X[i],  P.Y[i],
+                     P.X[i + PARAMETERS.A_PTS + 1],   P.Y[i + PARAMETERS.A_PTS + 1]); 
+
+        len2 = length(P.X[i + PARAMETERS.A_PTS + 1],   P.Y[i + PARAMETERS.A_PTS + 1],
+                     P.X[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS +2],   P.Y[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS +2]);
+
+        len3 = length(P.X[i + PARAMETERS.A_PTS + PARAMETERS.B_PTS +2],   P.Y[i+ PARAMETERS.A_PTS + PARAMETERS.B_PTS +2],
+                      P.X[i],  P.Y[i]);
+    
+       //calculaute the semi-perimeter of the tringle
+        sp = (len1 + len2 + len3)/2;
+
+        //area of tringle
+        a = sqrt(sp*(sp-len1)*(sp-len2)*(sp-len3));
+
+        if (DOUBLECOMPARE(a, 0)==EQ) 
+        {
+            measured_r= fmax(len1,len2);
+            measured_r= fmax(measured_r,len2);
+        } 
+        else
+        {   //circle circumscribing a triangle is r = len1 len2 len3 / (4* tringle area)
+            measured_r= len1*len2*len3/(4*a);
+        } 
+         
+        printf("measured_r %f \n", measured_r);
+        printf("RADIUS1 %f \n", PARAMETERS.RADIUS1);
+
+        if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
+        {
+            cond1 = 1;
+            printf("cond1 %d \n", DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT);
+        }  
+         if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS2) != GT)
+        {
+            cond2 = 1;
+            printf("cond2 %d \n", (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS2) != GT));
+        }
+
+       if (cond1 ==1 && cond2 == 1) 
+      {return 1;}
+
+        printf("here 1\n");
+
+  
+    }
+     printf("here 2\n");
+     return 0;
+
+
+}
