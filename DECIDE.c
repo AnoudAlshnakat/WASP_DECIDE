@@ -7,7 +7,7 @@ LIC_0:
 There exists at least one set of two consecutive data points 
 that are a distance greater than the length, LENGTH1, apart.
 ************************************************************/
-boolean LIC_0(double p_len)
+boolean LIC_0()
 {
     double diff_x, diff_y, distance;
     int i = 0;
@@ -18,7 +18,7 @@ boolean LIC_0(double p_len)
         diff_y = P.Y[i] - P.Y[i + 1];
         distance = sqrt((diff_x * diff_x) + (diff_y * diff_y));
 
-        switch (DOUBLECOMPARE(distance, p_len))
+        switch (DOUBLECOMPARE(distance, PARAMETERS.LENGTH1))
         {
 
         case GT:
