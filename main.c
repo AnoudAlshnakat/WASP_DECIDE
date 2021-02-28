@@ -19,7 +19,7 @@ int main()
   P.X=x;
   P.Y=y;
   PARAMETERS.LENGTH1 = 100;
-  boolean a = LIC_0(PARAMETERS.LENGTH1);
+  boolean a = LIC_0();
 
     if (a == 1)
   {
