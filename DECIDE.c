@@ -769,7 +769,7 @@ void generate_CMV()
 
 void DECIDE(void)
 {
-generate_LCM();
+generate_CMV();
 
 
 }
