@@ -9,7 +9,7 @@ typedef enum
 {
     NOTUSED = 777,
     ORR,
-    AND
+    ANDD
 } CONNECTORS;
 
 //pointer to an array of 100 doubles
