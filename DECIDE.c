@@ -547,6 +547,19 @@ boolean LIC_11()
     return 0;
 }
 
+
+
+/************************************************************
+LIC_12: 
+There exists at least one set of two data points, separated 
+by exactly K PTS consecutive intervening points, which are 
+a distance greater than the length, LENGTH1, apart. 
+In addition, there exists at least one set of two data points 
+(which can be the same or different from the two data 
+points just mentioned), separated by exactly K PTS consecutive 
+intervening points, that are a distance less than the length, 
+LENGTH2, apart. Both parts must be true for the LIC to be true.
+************************************************************/
 boolean LIC_12()
 {
 
