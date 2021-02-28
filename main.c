@@ -635,7 +635,7 @@ double X[10];
  /**************LIC10**************/
 
 //failing test case
-
+/*
 double X[10];
   X[0] = 0;
   X[1] = 0;
@@ -676,6 +676,67 @@ double X[10];
   {
     printf("failed \n");
   }
+
+*/
+
+
+
+ /**************LIC11**************/
+
+ //passing test case
+ /*
+ double X[10];
+  X[0] = 0;
+  X[1] = 0;
+  X[2] = 1;
+  X[3] = 0;
+  X[4] = 2;
+  X[5] = 2;
+  X[6] = 0;
+  X[7] = 0;
+  X[8] = 0;
+  X[9] = 0;
+  P.X = X; */
+
+
+//failing test case.
+  double X[10];
+  X[0] = 0;
+  X[1] = 1;
+  X[2] = 2;
+  X[3] = 3;
+  X[4] = 4;
+  X[5] = 5;
+  X[6] = 6;
+  X[7] = 7;
+  X[8] = 8;
+  X[9] = 9;
+  P.X = X;
+
+  double Y[10];
+  Y[0] = 0;
+  Y[1] = 0;
+  Y[2] = 2;
+  Y[3] = 0;
+  Y[4] = 0;
+  Y[5] = 0;
+  Y[6] = 0;
+  Y[7] = 0;
+  Y[8] = 0;
+  Y[9] = 0;
+  P.Y = Y; 
+
+  PARAMETERS.G_PTS=2;
+
+  if (LIC_11() == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+
 
 
   return 0;
