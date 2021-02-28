@@ -101,6 +101,9 @@ static VECTOR FUV2;
 boolean LAUNCH;
 static boolean LAUNCH2;
 
+//Final unlocking vector
+VECTOR PUV;
+
 // compares floating point numbers -- see Nonfunctional Requirements
 static inline COMPTYPE DOUBLECOMPARE(double A, double B)
 {
