@@ -8,7 +8,10 @@ SRC    = main.c DECIDE.c
 	$(CC) -c -o $@ $< $(CFLAGS) 
 
 main: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) 
+	$(CC) -o $@ $^ $(CFLAGS) 
+
+test:
+	$(CC) -o test DECIDE.c test_requierments.c $(CFLAGS)
 	
 clean : 
-	$(RM) *.bin *.o  main
+	$(RM) *.bin *.o  main test
