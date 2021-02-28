@@ -681,3 +681,60 @@ boolean LIC_13()
 
 
 }
+
+
+
+
+boolean LIC_14()
+{
+    if(NUMPOINTS < 5) return 0;
+    if(PARAMETERS.AREA2 < 0) return 0;
+
+    int i;
+    double len1,len2,len3;          //triengles sides length
+    double sp,a ;                   //semi parameter and area of the tringle
+    double measured_r ;             //measured radius
+    boolean cond1 = 0 , cond2 = 0;
+
+     for (i=0; i < NUMPOINTS - PARAMETERS.F_PTS - PARAMETERS.F_PTS -2 ; i++) 
+    {
+               //calculate the length which is the distance between all the points, to form a tringle
+            
+        len1 = length(P.X[i],  P.Y[i],
+                     P.X[i + PARAMETERS.E_PTS + 1],   P.Y[i + PARAMETERS.E_PTS + 1]); 
+
+        len2 = length(P.X[i + PARAMETERS.E_PTS + 1],   P.Y[i + PARAMETERS.E_PTS + 1],
+                     P.X[i + PARAMETERS.E_PTS + PARAMETERS.F_PTS +2],   P.Y[i + PARAMETERS.E_PTS + PARAMETERS.F_PTS +2]);
+
+        len3 = length(P.X[i + PARAMETERS.E_PTS + PARAMETERS.F_PTS +2],   P.Y[i+ PARAMETERS.E_PTS + PARAMETERS.F_PTS +2],
+                      P.X[i],  P.Y[i]);
+    
+       //calculaute the semi-perimeter of the tringle
+        sp = (len1 + len2 + len3)/2;
+
+        //area of tringle
+        a = sqrt(sp*(sp-len1)*(sp-len2)*(sp-len3));
+        printf("area %f \n", a);
+
+        if (DOUBLECOMPARE(a, PARAMETERS.AREA1) == GT)
+        {
+            cond1 = 1;
+            printf("cond1 %d \n", DOUBLECOMPARE(a, PARAMETERS.AREA1) == GT);
+
+        }
+
+        if (DOUBLECOMPARE(a, PARAMETERS.AREA2) == LT)
+        {
+            cond2 = 1;
+            printf("cond2 %d \n", (DOUBLECOMPARE(a, PARAMETERS.AREA2) == LT));
+        }
+
+        if(cond1 == 1 && cond2 == 1)
+        {
+            return 1;
+        }
+
+    }
+    return 0;
+
+}
