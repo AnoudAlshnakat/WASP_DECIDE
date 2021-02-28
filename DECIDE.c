@@ -682,9 +682,15 @@ boolean LIC_13()
 
 }
 
-
-
-
+/************************************************************
+There exists at least one set of three data points, separated 
+by exactly E_PTS and F_PTS con-secutive intervening points, 
+respectively, that are the vertices of a triangle with area 
+greater than AREA1. In addition, there exist three data points 
+ separated by exactly E PTS and F PTS consec- utive intervening 
+ points, respectively, that are the vertices of a triangle with 
+ area less than AREA2. 
+************************************************************/
 boolean LIC_14()
 {
     if(NUMPOINTS < 5) return 0;
