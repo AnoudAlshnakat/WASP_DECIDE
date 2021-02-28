@@ -603,7 +603,16 @@ boolean LIC_12()
 
 
 
-
+/************************************************************
+LIC_12: 
+There exists at least one set of three data points, separated 
+by exactly A_PTS and B_PTS consecutive intervening points, 
+respectively, that cannot be contained within or on a circle of 
+radius RADIUS1. In addition, there exists at least one set of 
+three data points separated by exactly A_PTS and 
+B_PTS consecutive intervening points, respectively, that can 
+be contained in or on a circle of radius RADIUS2. 
+************************************************************/
 
 boolean LIC_13()
 {
