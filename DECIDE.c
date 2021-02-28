@@ -835,7 +835,7 @@ void generate_FUV()
 void launch_or_not ()
 {
     int i;
-    for (int i = 0; i < 15; j++) 
+    for (int i = 0; i < 15; i++) 
     {
         if(FUV[i] == 0)
         {
