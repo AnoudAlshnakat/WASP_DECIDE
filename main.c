@@ -740,8 +740,8 @@ double X[10];
 
 
  /**************LIC12**************/
- //passing test case
-/*  double X[10];
+ //failing test case
+ /* double X[10];
   X[0] = 1;
   X[1] = 0;
   X[2] = 5;
@@ -773,7 +773,7 @@ double X[10];
 
 
 
-//failing test case
+//passing test case
   double X[10];
   X[0] = 0;
   X[1] = 1;
@@ -817,6 +817,7 @@ double X[10];
  /**************LIC13**************/
 //double X[] = {1,2,3,4,5,6,7,8}; 
 //failing test case
+/*
  double X[10];
   X[0] = 1;
   X[1] = 0;
@@ -856,7 +857,7 @@ PARAMETERS.B_PTS = 2;
   {
     printf("failed \n");
   }
-
+*/
 
 
 

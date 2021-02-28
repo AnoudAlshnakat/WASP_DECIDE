@@ -594,9 +594,9 @@ boolean LIC_12()
     }
 
     if (cond1 ==1 && cond2 == 1) 
-    {return 0;}
+    {return 1;}
      else 
-     {return 1;};  
+     {return 0;};  
 
 }
 
