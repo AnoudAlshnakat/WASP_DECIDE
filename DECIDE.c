@@ -98,7 +98,7 @@ boolean LIC_1()
 
 
 
-double calculate_angle(x1, x2, x3, y1, y2, y3)
+double calculate_angle(double x1, double x2, double x3, double y1, double y2, double y3)
 {
      double p1_c = sqrt(pow(x2-x1,2)+ pow(y2-y1,2)); // from first point to teh base  
     double p2_c = sqrt(pow(x2-x3,2)+ pow(y2-y3,2)); // from second point to the base
@@ -181,7 +181,7 @@ boolean LIC_3()
 
 
 
-which_quad(x,y)
+which_quad(double x,double y)
 {
         if ((DOUBLECOMPARE(x,0) == GT) || (DOUBLECOMPARE(x,0) == EQ)) 
           {  if (DOUBLECOMPARE(y,0) == GT)
@@ -512,6 +512,33 @@ boolean LIC_10()
     }
     return 0;
 
+}
+
+
+
+
+
+
+
+boolean LIC_11()
+{   
+     
+    if(NUMPOINTS < 3) return 0;
+    if (PARAMETERS.G_PTS<1 || PARAMETERS.G_PTS< NUMPOINTS -2) return 0;
+   
+    int i ,ind1, ind2;
+    for(i=0; i< NUMPOINTS - PARAMETERS.G_PTS - 1  ; i++)
+    {
+          ind1 = i;
+          ind2 = NUMPOINTS + 1 + PARAMETERS.G_PTS;
+
+          if ((DOUBLECOMPARE((P.X[ind2] - P.X[ind1]) , 0) == LT))
+          {
+              return 1;
+          }
+
+    }
+    return 0;
 }
 
 
