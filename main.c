@@ -861,6 +861,48 @@ PARAMETERS.B_PTS = 2;
 
 
 
+ /**************LIC14**************/
+ //failing test case
+ double X[10];
+  X[0] = 1;
+  X[1] = 0;
+  X[2] = 5;
+  X[3] = 5;
+  X[4] = 1;
+  X[5] = 5;
+  X[6] = 6;
+  X[7] = 7;
+  X[8] = 8;
+  X[9] = 9;
+  P.X = X; 
+
+  double Y[10];
+  Y[0] = 1;
+  Y[1] = 0;
+  Y[2] = 5;
+  Y[3] = 5;
+  Y[4] = 2;
+  Y[5] = 0;
+  Y[6] = 0;
+  Y[7] = 0;
+  Y[8] = 0;
+  Y[9] = 0;
+  P.Y = Y; 
+
+PARAMETERS.AREA1 = 2; 
+PARAMETERS.AREA2 = 1; //to make it pass 14
+PARAMETERS.E_PTS = 2;
+PARAMETERS.F_PTS = 2;
+
+  if (LIC_14() == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+
   return 0;
 }
 
