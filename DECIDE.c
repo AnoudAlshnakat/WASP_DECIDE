@@ -804,7 +804,8 @@ void generate_PUM()
 function added to check that all members of the PUM are true
 */
 boolean row_true (int row)
-{
+{   
+    int j;
     for (int j = 0; j < 15; j++) 
     {
         if(PUM[row][j] == 0)  return  0;
@@ -819,7 +820,7 @@ function to generate the Final Unlocking Vector (FUV)
 */
 void generate_FUV()
 {
-    int i,j;
+    int i;
     for(i = 0; i < 15 ; i++ )
     {
         if (PUV[i] == 0 ||  row_true(i)) 
