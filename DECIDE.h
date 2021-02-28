@@ -124,5 +124,6 @@ boolean LIC_7();
 boolean LIC_8();
 boolean LIC_9();
 boolean LIC_10();
+boolean LIC_11();
 
 //////////// end of file /////////////
