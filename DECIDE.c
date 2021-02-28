@@ -800,7 +800,9 @@ void generate_PUM()
 }
 
 
-
+/*
+function added to check that all members of the PUM are true
+*/
 boolean row_true (int row)
 {
     for (int j = 0; j < 15; j++) 
