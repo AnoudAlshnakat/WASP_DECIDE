@@ -814,6 +814,22 @@ return 1;
 
 
 
+/*
+function to generate the Final Unlocking Vector (FUV)
+*/
+void generate_FUV()
+{
+    int i;
+    for(i = 0; i < 15 ; i++ )
+    {
+        if (PUV[i] == 0 ||  row_true(i)) 
+        {
+            FUV[i] == 1;
+        }
+
+    }
+}
+
 
 void DECIDE(void)
 {
