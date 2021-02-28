@@ -770,7 +770,7 @@ double X[10];
   PARAMETERS.LENGTH1 = 4;
   PARAMETERS.LENGTH2 = 1;
   PARAMETERS.K_PTS = 2;
-*/
+
 
 
 //failing test case
@@ -812,6 +812,53 @@ double X[10];
   {
     printf("failed \n");
   }
+*/
+
+ /**************LIC13**************/
+//double X[] = {1,2,3,4,5,6,7,8}; 
+//failing test case
+ double X[10];
+  X[0] = 1;
+  X[1] = 0;
+  X[2] = 5;
+  X[3] = 5;
+  X[4] = 1;
+  X[5] = 5;
+  X[6] = 6;
+  X[7] = 7;
+  X[8] = 8;
+  X[9] = 9;
+  P.X = X; 
+
+  double Y[10];
+  Y[0] = 1;
+  Y[1] = 0;
+  Y[2] = 5;
+  Y[3] = 5;
+  Y[4] = 2;
+  Y[5] = 0;
+  Y[6] = 0;
+  Y[7] = 0;
+  Y[8] = 0;
+  Y[9] = 0;
+  P.Y = Y; 
+
+PARAMETERS.RADIUS1 = 4; //to make it pass make it 0.5
+PARAMETERS.RADIUS2 = 3;
+PARAMETERS.A_PTS = 2;
+PARAMETERS.B_PTS = 2;
+
+  if (LIC_13() == 1)
+  {
+    printf("passed \n");
+  }
+  else
+  {
+    printf("failed \n");
+  }
+
+
+
 
   return 0;
 }
