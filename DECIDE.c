@@ -746,7 +746,26 @@ boolean LIC_14()
 }
 
 
-DECIDE()
-{
-    
+void DECIDE(void)
+{ //condition met vector initlisation
+    CMV[0] = LIC_0();
+    CMV[1] = LIC_1();
+    CMV[2] = LIC_2();
+    CMV[3] = LIC_3();
+    CMV[4] = LIC_4();
+    CMV[5] = LIC_5();
+    CMV[6] = LIC_6();
+    CMV[7] = LIC_7();
+    CMV[8] = LIC_8();
+    CMV[9] = LIC_9();
+    CMV[10] = LIC_10();
+    CMV[11] = LIC_11();
+    CMV[12] = LIC_12();
+    CMV[13] = LIC_13();
+    CMV[14] = LIC_14();
+
+
+
+
+
 }
