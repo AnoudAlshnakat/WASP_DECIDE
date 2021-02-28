@@ -547,5 +547,42 @@ boolean LIC_11()
     return 0;
 }
 
+boolean LIC_12()
+{
 
+    if(NUMPOINTS < 3) return 0;
+    if(PARAMETERS.LENGTH2 < 0) return 0;
+    
+    int i;
+    boolean cond1 = 0, cond2 = 0;
+    double x1,x2,y1,y2, dist;
 
+    for (i=0; i< NUMPOINTS - PARAMETERS.K_PTS -1 ; i++ )
+    {
+        x1 = P.X[i];
+        y1 = P.Y[i];
+        x2 = P.X[NUMPOINTS - PARAMETERS.K_PTS +1 ];
+        y2 = P.Y[NUMPOINTS - PARAMETERS.K_PTS +1 ];
+
+        dist = length(x1,y1,x2,y2);
+
+         if (DOUBLECOMPARE(dist,PARAMETERS.LENGTH1) == GT)
+         {
+             cond1 = 1;
+         } 
+         else if (DOUBLECOMPARE(dist,PARAMETERS.LENGTH2) == LT)  
+         {
+             cond2 = 1;
+         }
+         else 
+         {
+             ;
+         }        
+    }
+
+    if (cond1 ==1 && cond2 == 1) 
+    {return 0;}
+     else 
+     {return 1;};  
+
+}
