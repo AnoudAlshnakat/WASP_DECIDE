@@ -280,7 +280,7 @@ LIC7 test cases: 1 passing and 1 failing
 ****************************************/
 boolean LIC_7_Pass_case1()
 {
-    //test inputs: Number of points = 10, the parameter N_PTS = 3, DIST = 1, and coordinates of 10 points.
+    //test inputs: Number of points = 10, the parameter K_PTS = 3, LENGTH1 = 1, and coordinates of 10 points.
     NUMPOINTS = 10;
     double X[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     double Y[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
