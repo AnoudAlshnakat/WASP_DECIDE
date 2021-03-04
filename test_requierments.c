@@ -327,7 +327,7 @@ boolean LIC_8_Pass_case1()
     PARAMETERS.A_PTS=2;   
     PARAMETERS.B_PTS=1;
     PARAMETERS.RADIUS1=3.5;
-    //LIC_7 should pass because the minimal radius that the first set of points will fit in a 
+    //LIC_8 should pass because the minimal radius that the first set of points will fit in a 
     // radius of 6 units, and this is larger than the parameter RADIUS1 = 3.5
     boolean result = LIC_8();
     assert(result == 1);
