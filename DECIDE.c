@@ -533,13 +533,13 @@ boolean LIC_11()
 {   
      
     if(NUMPOINTS < 3) return 0;
-    if (PARAMETERS.G_PTS<1 || PARAMETERS.G_PTS< NUMPOINTS -2) return 0;
+    if (PARAMETERS.G_PTS<1 || PARAMETERS.G_PTS > NUMPOINTS -2) return 0;
    
     int i ,ind1, ind2;
     for(i=0; i< NUMPOINTS - PARAMETERS.G_PTS - 1  ; i++)
     {
           ind1 = i;
-          ind2 = NUMPOINTS + 1 + PARAMETERS.G_PTS;
+          ind2 = i + 1 + PARAMETERS.G_PTS;
 
           if ((DOUBLECOMPARE((P.X[ind2] - P.X[ind1]) , 0) == LT))
           {
