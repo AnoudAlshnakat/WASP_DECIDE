@@ -236,6 +236,26 @@ boolean LIC_5_Fail_case1()
     return result;
 }
 
+/****************************************
+LIC6 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_6_Pass_case1()
+{
+    //test inputs: Number of points = 10, the parameter N_PTS = 3, DIST = 1, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    double Y[] = {3, 12, 3, 3, 3, 3, 3, 3, 3, 3};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.DIST= 0.5;    
+    PARAMETERS.N_PTS= 3;
+    //LIC_6 should pass because the there is a set of 3 N_PTS points such that 
+    //the distance between them is greater than DIST = 0.5 unit. 
+    boolean result = LIC_6();
+    assert(result == 1);
+    return result;
+}
+
 //function to call the LICs test cases and prints the result
 test_all_LIC()
 {   //LIC0 test cases call 
@@ -311,6 +331,12 @@ test_all_LIC()
    printf("LIC_5 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_5 test case 1 for failing input : FAILED \n");
+
+   //LIC6 test cases call
+   if (LIC_6_Pass_case1() == 1) 
+   printf("LIC_6 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_6 test case 1 for passing input : FAILED \n");
  
 }
 
