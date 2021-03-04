@@ -334,7 +334,23 @@ boolean LIC_8_Pass_case1()
     return result;
 }
 
-
+boolean LIC_8_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter A_PTS = 2, B_PTS = 2,  RADUIS1 = 9, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
+    double Y[] = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.A_PTS=2;   
+    PARAMETERS.B_PTS=2;
+    PARAMETERS.RADIUS1=9;
+    //LIC_8 should fail because the minimal radius that the first set of points will fit in a 
+    // radius of 6 units, and this is larger than the parameter RADIUS1 = 3.5
+    boolean result = LIC_8();
+    assert(result == 0);
+    return result;
+}
 
 
 
@@ -442,6 +458,11 @@ test_all_LIC()
    printf("LIC_8 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_8 test case 1 for passing input : FAILED \n");
+
+   if (LIC_8_Fail_case1() == 0) 
+   printf("LIC_8 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_8 test case 1 for failing input : FAILED \n");
  
 }
 
