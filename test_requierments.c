@@ -204,6 +204,23 @@ boolean LIC_4_Fail_case1()
     return result;
 }
 
+/****************************************
+LIC5 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_5_Pass_case1()
+{
+    //test inputs: Number of points with X coordinate = 10
+    NUMPOINTS = 10;
+    double X[] = {1, 2, 3, 5, 4, 2, 1, 1, 0, 0};
+    double Y[] = {3, 6, 2,-1, 7, 8, 1, 3, 4, 5};
+    P.X = X;
+    P.Y = Y;
+    //LIC_5 should pass because there exist at least two consecutive points
+    //where the second one - first one is a negative value
+    boolean result = LIC_5();
+    assert(result == 1);
+    return result;
+}
 
 
 //function to call the LICs test cases and prints the result
@@ -270,6 +287,12 @@ test_all_LIC()
    printf("LIC_4 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_4 test case 1 for failing input : FAILED \n");
+
+   //LIC5 test cases call
+   if (LIC_5_Pass_case1() == 1) 
+   printf("LIC_5 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_5 test case 1 for passing input : FAILED \n");
  
 }
 
