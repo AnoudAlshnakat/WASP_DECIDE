@@ -8,10 +8,9 @@ There exists at least one set of two consecutive data points
 that are a distance greater than the length, LENGTH1, apart.
 ************************************************************/
 boolean LIC_0()
-{
+{   if(PARAMETERS.LENGTH1 < 0) return 0;
     double diff_x, diff_y, distance;
     int i = 0;
-
     while (i < NUMPOINTS)
     {
         diff_x = P.X[i] - P.X[i + 1];
