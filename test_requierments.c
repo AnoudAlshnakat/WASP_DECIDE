@@ -447,9 +447,25 @@ boolean LIC_11_Pass_case1()
     P.Y = Y;
     PARAMETERS.G_PTS=2;
     //LIC_11 should pass because the coordinate x is decreasing which makes the 
-    // condition X[j] > X[i] , where j is G_PTS +i apart from the point at position i.
+    // condition X[j] - X[i] < 0  true, where j is G_PTS +i apart from the point at position i.
     boolean result = LIC_11();
     assert(result == 1);
+    return result;
+}
+
+boolean LIC_11_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter G_PTS = 4 and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 2, 3, 5, 6, 7, 9, 10, 12, 13};
+    double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.G_PTS=2;
+    //LIC_11 should fail because the coordinate x is increasing which makes the 
+    // condition X[j] > X[i] false, where j is G_PTS +i apart from the point at position i.
+    boolean result = LIC_11();
+    assert(result == 0);
     return result;
 }
 
@@ -590,6 +606,11 @@ test_all_LIC()
    printf("LIC_11 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_11 test case 1 for passing input : FAILED \n");
+
+   if (LIC_11_Fail_case1() == 0) 
+   printf("LIC_11 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_11 test case 1 for failing input : FAILED \n");
  
 }
 
