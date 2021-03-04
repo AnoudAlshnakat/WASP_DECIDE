@@ -352,6 +352,27 @@ boolean LIC_8_Fail_case1()
     return result;
 }
 
+/****************************************
+LIC9 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_9_Pass_case1()
+{
+    //test inputs: Number of points = 10, the parameter C_PTS = 1, D_PTS = 1,  EPSILON = 1, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 0, 1, 0, 1, 0, 0, 0, 0, 0};
+    double Y[] = {1, 0, 0, 0, 1, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.C_PTS=1;       
+    PARAMETERS.D_PTS=1;
+    PARAMETERS.EPSILON=1;
+    //LIC_9 should pass because the angle created in the first three points is 90 degrees
+    //which is larger than PI+EPSILON, thus requirement is satisfied.
+    boolean result = LIC_9();
+    assert(result == 1);
+    return result;
+}
+
 
 
 
@@ -463,6 +484,12 @@ test_all_LIC()
    printf("LIC_8 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_8 test case 1 for failing input : FAILED \n");
+
+   //LIC9 test cases call
+   if (LIC_9_Pass_case1() == 1) 
+   printf("LIC_9 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_9 test case 1 for passing input : FAILED \n");
  
 }
 
