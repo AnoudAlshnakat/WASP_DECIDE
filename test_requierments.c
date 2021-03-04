@@ -78,6 +78,22 @@ boolean LIC_1_Pass_case1()
 }
 
 
+boolean LIC_1_Fail_case1()
+{
+    //test inputs: Number of points = 5, the parameter RADIUS1 = 1 unit, and coordinates of 5 points.
+    NUMPOINTS = 5;
+    double X[] = {1,2,3,4,5};
+    double Y[] = {0,0,0,0,0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.RADIUS1 = 1;
+    //LIC_1 should fail because the first three points can be contained or on a
+    //circle with RADIUS1 1
+    boolean result = LIC_1();
+    assert(result == 0);
+    return result;
+}
+
 
 
 //function to call the LICs test cases and prints the result
@@ -106,6 +122,11 @@ test_all_LIC()
    printf("LIC_1 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_1 test case 1 for passing input : FAILED \n");
+
+   if (LIC_1_Fail_case1() == 0) 
+   printf("LIC_1 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_1 test case 1 for failing input : FAILED \n");
  
 }
 
