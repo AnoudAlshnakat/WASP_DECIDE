@@ -4,17 +4,37 @@
 #include <assert.h>
 
 
+boolean LIC_0_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter LENGTH1 = 100 unit, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {5, 3, 5, 8, 5, 3, 5, 8, 2, 3};
+    double Y[] = {1, 4, 3, 1, 5, 6, 1, 6, 1, 4};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.LENGTH1 = 100;
+
+    //LIC_0 should fail because there is no distance between 
+    //any two consequent points larger than LENGTH1
+    boolean result = LIC_0();
+    assert(result == 0);
+    return result; 
+}
 
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
 {
+   if (LIC_0_Fail_case1() == 0) 
+   printf("LIC_0 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_0 test case 1 for failing input : FAILED \n");
  
 }
 
 
 void main()
 { //Test the requirements function call
-  test_all_LIC()
+  test_all_LIC();
 
 }
