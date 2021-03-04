@@ -416,6 +416,26 @@ boolean LIC_10_Pass_case1()
 }
 
 
+boolean LIC_10_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter F_PTS = 4, E_PTS = 1,  AREA1 = 3, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 0, 1, 0, 2, 2, 0, 0, 0, 0};
+    double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.AREA1 = 3; 
+    PARAMETERS.F_PTS = 4;
+    PARAMETERS.E_PTS = 1;
+    //LIC_9 should fail because there is NO three set of points with the separation number E_PTS and F_PTS
+    //that has a trangle area larger than parameter AREA1 = 1.8
+    boolean result = LIC_10();
+    assert(result == 0);
+    return result;
+}
+
+
+
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
@@ -542,6 +562,11 @@ test_all_LIC()
    printf("LIC_10 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_10 test case 1 for passing input : FAILED \n");
+
+   if (LIC_10_Fail_case1() == 0) 
+   printf("LIC_10 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_10 test case 1 for failing input : FAILED \n");
  
 }
 
