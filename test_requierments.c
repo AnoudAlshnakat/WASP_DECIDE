@@ -475,7 +475,7 @@ LIC12 test cases: 1 passing and 1 failing
 ****************************************/
 boolean LIC_12_Pass_case1()
 {
-    //test inputs: Number of points = 10, the parameter K_PTS = 2, LENGTH1 = 10, LENGTH2 = 10 and coordinates of 10 points.
+    //test inputs: Number of points = 10, the parameter K_PTS = 2, LENGTH1 = 5, LENGTH2 = 10 and coordinates of 10 points.
     NUMPOINTS = 10;
     double X[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
@@ -493,7 +493,23 @@ boolean LIC_12_Pass_case1()
 }
 
 
-
+boolean LIC_12_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter K_PTS = 4, LENGTH1 = 10, LENGTH2 = 10 and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {1, 0, 5, 5, 1, 5, 6, 7, 8, 9};
+    double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.LENGTH1 = 4;
+    PARAMETERS.LENGTH2 = 1;
+    PARAMETERS.K_PTS = 2;
+    //LIC_12 should fail because there is NO exsist two points that are K_PTS apart, where the 
+    //distance is less than LENGTH2, thus it cotradict one of the sub conditions
+    boolean result = LIC_12();
+    assert(result == 0);
+    return result;
+}
 
 
 
@@ -645,6 +661,11 @@ test_all_LIC()
    printf("LIC_12 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_12 test case 1 for passing input : FAILED \n");
+
+   if (LIC_12_Fail_case1() == 0) 
+   printf("LIC_12 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_12 test case 1 for failing input : FAILED \n");
 }
 
 
