@@ -475,7 +475,7 @@ LIC12 test cases: 1 passing and 1 failing
 ****************************************/
 boolean LIC_12_Pass_case1()
 {
-    //test inputs: Number of points = 10, the parameter K_PTS = 4, LENGTH1 = 10, LENGTH2 = 10 and coordinates of 10 points.
+    //test inputs: Number of points = 10, the parameter K_PTS = 2, LENGTH1 = 10, LENGTH2 = 10 and coordinates of 10 points.
     NUMPOINTS = 10;
     double X[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
@@ -491,6 +491,9 @@ boolean LIC_12_Pass_case1()
     assert(result == 1);
     return result;
 }
+
+
+
 
 
 
