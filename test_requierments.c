@@ -95,6 +95,26 @@ boolean LIC_1_Fail_case1()
 }
 
 
+/****************************************
+LIC2 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_2_Pass_case1()
+{
+    //test inputs: Number of points = 5, the parameter EPSILON = 1 unit, and coordinates of 5 points.
+    NUMPOINTS = 5;
+    double X[] = {0, 0, 1, 2, 3};
+    double Y[] = {1, 0, 0, 0, 3};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.EPSILON=1;
+    //LIC_2 should pass because the angle created in the first three points is 90 degrees
+    //which is larger than PI+EPSILON, thus requirement is satisfied.
+    boolean result = LIC_2();
+    assert(result == 1);
+    return result;
+}
+
+
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
@@ -127,6 +147,12 @@ test_all_LIC()
    printf("LIC_1 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_1 test case 1 for failing input : FAILED \n");
+
+    //LIC2 test cases call
+   if (LIC_2_Pass_case1() == 1) 
+   printf("LIC_2 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_2 test case 1 for passing input : FAILED \n");
  
 }
 
