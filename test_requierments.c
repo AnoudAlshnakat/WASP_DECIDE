@@ -3,6 +3,10 @@
 #include <string.h>
 #include <assert.h>
 
+/****************************************
+LIC0 test cases: 2 failing and 1 passing
+****************************************/
+
 boolean LIC_0_Pass_case1()
 {
     //test inputs: Number of points = 10, the parameter LENGTH1 = 4 unit, and coordinates of 10 points.
