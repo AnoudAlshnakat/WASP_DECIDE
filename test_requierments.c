@@ -224,7 +224,7 @@ boolean LIC_5_Pass_case1()
 
 boolean LIC_5_Fail_case1()
 {
-    //test inputs: Number of points = 10, the parameter Q_PTS = 3, QUADS = 3, and coordinates of 10 points.
+    //test inputs: Number of points with X coordinate = 10
     NUMPOINTS = 10;
     double X[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     double Y[] = {1, 1, 1, 1, 3, 1, 6, 1, 1, 1};
