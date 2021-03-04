@@ -385,7 +385,7 @@ boolean LIC_9_Fail_case1()
     PARAMETERS.C_PTS=1;       
     PARAMETERS.D_PTS=2;
     PARAMETERS.EPSILON=PI;
-    //LIC_9 should pass because the angle created in any three consecutive points is 0, so
+    //LIC_9 should fail because the angle created in any three consecutive points is 0, so
     //the condition is not satisfied because 0 == PI-EPSLION, i.e. it is not less or nor larger than PI-EPSILON
     boolean result = LIC_9();
     assert(result == 0);
@@ -399,7 +399,7 @@ LIC10 test cases: 1 passing and 1 failing
 ****************************************/
 boolean LIC_10_Pass_case1()
 {
-    //test inputs: Number of points = 10, the parameter F_PTS = 4, E_PTS = 1,  AREA1 = 1, and coordinates of 10 points.
+    //test inputs: Number of points = 10, the parameter F_PTS = 4, E_PTS = 1,  AREA1 = 1.8, and coordinates of 10 points.
     NUMPOINTS = 10;
     double X[] = {0, 0, 1, 0, 2, 2, 0, 0, 0, 0};
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
