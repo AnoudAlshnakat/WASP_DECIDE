@@ -188,6 +188,22 @@ boolean LIC_4_Pass_case1()
     return result;
 }
 
+boolean LIC_4_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter Q_PTS = 3, QUADS = 3, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {3, 1, 1, 1, 5, 1, 3, 1, 1, 1};
+    double Y[] = {1, 1, 1, 1, 3, 1, 6, 1, 1, 1};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.Q_PTS = 2;
+    PARAMETERS.QUADS = 1;
+    //LIC_4 should fail 
+    boolean result = LIC_4();
+    assert(result == 0);
+    return result;
+}
+
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
@@ -248,6 +264,11 @@ test_all_LIC()
    printf("LIC_4 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_4 test case 1 for passing input : FAILED \n");
+
+   if (LIC_4_Fail_case1() == 0) 
+   printf("LIC_4 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_4 test case 1 for failing input : FAILED \n");
  
 }
 
