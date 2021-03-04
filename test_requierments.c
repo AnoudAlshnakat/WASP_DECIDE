@@ -198,11 +198,12 @@ boolean LIC_4_Fail_case1()
     P.Y = Y;
     PARAMETERS.Q_PTS = 2;
     PARAMETERS.QUADS = 1;
-    //LIC_4 should fail 
+    //LIC_4 should fail because all the exsisting points are in the first Quadrant 
     boolean result = LIC_4();
     assert(result == 0);
     return result;
 }
+
 
 
 //function to call the LICs test cases and prints the result
