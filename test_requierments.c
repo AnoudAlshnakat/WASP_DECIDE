@@ -222,6 +222,19 @@ boolean LIC_5_Pass_case1()
     return result;
 }
 
+boolean LIC_5_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter Q_PTS = 3, QUADS = 3, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    double Y[] = {1, 1, 1, 1, 3, 1, 6, 1, 1, 1};
+    P.X = X;
+    P.Y = Y;
+    //LIC_5 should fail there are no consecutive points that satisfies the LIC5 condition
+    boolean result = LIC_5();
+    assert(result == 0);
+    return result;
+}
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
@@ -293,6 +306,11 @@ test_all_LIC()
    printf("LIC_5 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_5 test case 1 for passing input : FAILED \n");
+
+   if (LIC_5_Fail_case1() == 0) 
+   printf("LIC_5 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_5 test case 1 for failing input : FAILED \n");
  
 }
 
