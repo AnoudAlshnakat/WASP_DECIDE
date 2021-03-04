@@ -131,6 +131,25 @@ boolean LIC_2_Fail_case1()
 }
 
 
+/****************************************
+LIC3 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_3_Pass_case1()
+{
+    //test inputs: Number of points = 10, the parameter AREA = 3 unit, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {3, 1, 1, 1, 5, 1, 3, 1, 1, 1};
+    double Y[] = {1, 1, 1, 1, 3, 1, 6, 1, 1, 1};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.AREA1 = 3;
+    //LIC_3 should pass because there exsist three points X[4]-X[6] with Y[4]-Y[6]
+    //form a trangle with an area = 8  which is greater than AREA1
+    boolean result = LIC_3();
+    assert(result == 1);
+    return result;
+}
+
 
 //function to call the LICs test cases and prints the result
 test_all_LIC()
@@ -174,6 +193,12 @@ test_all_LIC()
    printf("LIC_2 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_2 test case 1 for failing input : FAILED \n");
+
+   //LIC3 test cases call
+   if (LIC_3_Pass_case1() == 1) 
+   printf("LIC_3 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_3 test case 1 for passing input : FAILED \n");
  
 }
 
