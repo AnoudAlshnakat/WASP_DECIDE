@@ -220,15 +220,19 @@ boolean LIC_4()
             switch (which_quad (P.X[index],P.Y[index]))
           {  case 1:
               Q[0]=1;
+              break;
               
             case 2:
               Q[1]=1;
+               break;
               
             case 3:
               Q[2]=1;
+               break;
               
             case 4:
               Q[3]=1;
+               break;
               }     
         }
         printf("Q0 %d, Q1 %d, Q2 %d , Q3 %d  \n", Q[0] , Q[1], Q[2], Q[3] );
