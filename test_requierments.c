@@ -470,6 +470,31 @@ boolean LIC_11_Fail_case1()
 }
 
 
+/****************************************
+LIC12 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_12_Pass_case1()
+{
+    //test inputs: Number of points = 10, the parameter K_PTS = 4, LENGTH1 = 10, LENGTH2 = 10 and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.LENGTH1 = 5;
+    PARAMETERS.LENGTH2 = 10;
+    PARAMETERS.K_PTS = 2;
+    //LIC_12 should pass because there exsist two points that are K_PTS apart, where the distance 
+    //between them is larger than LENGTH1, and also
+    //there exsist other two points the distance is less than LENGTH2
+    boolean result = LIC_12();
+    assert(result == 1);
+    return result;
+}
+
+
+
+
 //function to call the LICs test cases and prints the result
 test_all_LIC()
 {   //LIC0 test cases call 
@@ -612,6 +637,11 @@ test_all_LIC()
    else
    printf("LIC_11 test case 1 for failing input : FAILED \n");
  
+   //LIC12 test cases call
+   if (LIC_12_Pass_case1() == 1) 
+   printf("LIC_12 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_12 test case 1 for passing input : FAILED \n");
 }
 
 
