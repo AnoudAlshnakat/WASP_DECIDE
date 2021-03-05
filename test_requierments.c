@@ -536,6 +536,25 @@ boolean LIC_13_Pass_case1()
 }
 
 
+boolean LIC_13_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter RADIUS1 = 0.5, RADIUS2 = 3, A_PTS = 2, B_PTS=1, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {1, 0, 5, 5, 1, 5, 6, 7, 8, 9};
+    double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.RADIUS1 = 4; 
+    PARAMETERS.RADIUS2 = 3;
+    PARAMETERS.A_PTS = 2;
+    PARAMETERS.B_PTS = 2;
+    //LIC_13 should fail because there is not exsist a pair of points, far away from each other 
+    //2 points (A_PTS) that cannot fit in a circle with radius 0.5 unit, thus, the condition LIC13 doesn't hold.
+    boolean result = LIC_13();
+    assert(result == 0);
+    return result;
+}
+
 
 
 test_all_LIC()
@@ -695,6 +714,11 @@ test_all_LIC()
    printf("LIC_13 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_13 test case 1 for passing input : FAILED \n");
+
+  if (LIC_13_Fail_case1() == 0) 
+   printf("LIC_13 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_13 test case 1 for failing input : FAILED \n");
 
 }
 
