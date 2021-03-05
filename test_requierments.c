@@ -579,6 +579,25 @@ boolean LIC_14_Pass_case1()
     return result;
 }
 
+boolean LIC_14_Fail_case1()
+{
+    //test inputs: Number of points = 10, the parameter AREA1 = 2, AREA2 = 14, E_PTS = 2, F_PTS=2, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {1, 0, 5, 5, 1, 5, 6, 7, 8, 9};
+    double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.AREA1 = 2; 
+    PARAMETERS.AREA2 = 1;
+    PARAMETERS.E_PTS = 2;
+    PARAMETERS.F_PTS = 2;
+    //LIC_14 should fail because there is not exist three datapoints (that are separated by 2 points),
+    //that create an area greater than AREA1(2)). that makes LIC14 fail.
+    boolean result = LIC_14();
+    assert(result == 0);
+    return result;
+}
+
 
 test_all_LIC()
 {   //LIC0 test cases call 
@@ -748,6 +767,11 @@ test_all_LIC()
    printf("LIC_14 test case 1 for passing input : PASSED \n");
    else
    printf("LIC_14 test case 1 for passing input : FAILED \n");
+
+   if (LIC_14_Fail_case1() == 0) 
+   printf("LIC_14 test case 1 for failing input : PASSED \n");
+   else
+   printf("LIC_14 test case 1 for failing input : FAILED \n");
 
 }
 
