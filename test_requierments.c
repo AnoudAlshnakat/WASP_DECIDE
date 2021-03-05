@@ -511,10 +511,33 @@ boolean LIC_12_Fail_case1()
     return result;
 }
 
+/****************************************
+LIC13 test cases: 1 passing and 1 failing
+****************************************/
+boolean LIC_13_Pass_case1()
+{
+    //test inputs: Number of points = 10, the parameter RADIUS1 = 0.5, RADIUS2 = 3, A_PTS = 2, B_PTS=1, and coordinates of 10 points.
+    NUMPOINTS = 10;
+    double X[] = {1, 0, 5, 5, 1, 5, 6, 7, 8, 9};
+    double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
+    P.X = X;
+    P.Y = Y;
+    PARAMETERS.RADIUS1 = 0.5; 
+    PARAMETERS.RADIUS2 = 3;
+    PARAMETERS.A_PTS = 2;
+    PARAMETERS.B_PTS = 2;
+    //LIC_13 should pass because there exsist a pair of points, far away from each other 
+    //2 points (A_PTS), in the list of coordinates, 
+    //that cannot fit in a circle with radius 0.5 unit, AND there exist a a pair of point
+    //far away from eachother 2 points unit (B_PTS), that can fit in a circle of RADIUS2.
+    boolean result = LIC_13();
+    assert(result == 1);
+    return result;
+}
 
 
 
-//function to call the LICs test cases and prints the result
+
 test_all_LIC()
 {   //LIC0 test cases call 
 
@@ -666,6 +689,13 @@ test_all_LIC()
    printf("LIC_12 test case 1 for failing input : PASSED \n");
    else
    printf("LIC_12 test case 1 for failing input : FAILED \n");
+
+   //LIC13 test cases call
+   if (LIC_13_Pass_case1() == 1) 
+   printf("LIC_13 test case 1 for passing input : PASSED \n");
+   else
+   printf("LIC_13 test case 1 for passing input : FAILED \n");
+
 }
 
 
