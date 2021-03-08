@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/AnoudAlshnakat/WASP_DECIDE.svg?branch=main)](https://travis-ci.com/AnoudAlshnakat/WASP_DECIDE)
+
 # Launch Interceptor program
 This repository is a simple hypothetical anti-ballistic missile system written in C.
 The inputs are Radar echo-planar data points, Logical Connector Matrix (LCM) and Preliminary Unlocking Vector (PUV).
