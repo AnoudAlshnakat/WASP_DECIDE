@@ -27,6 +27,11 @@ unit-testing has been accomplished for 16 requirements, both passing cases and f
 
 `.travis.yml` contains the initial configration for travic CI.
 
+## Branch convention:
+There are two branches, `main` and `initial-code`.
+The `initial-code` is used as the development branch to add features and testing.
+While the `main` branch holds the code that can be exected properly after merging the `initial-code` with it.
+
 
 ## Getting Started
 To get started, the project requires gcc-compiler to be installed.
