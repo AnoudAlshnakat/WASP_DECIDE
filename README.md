@@ -33,17 +33,17 @@ All versions are supposed to be okay to use, however, in this project the used o
 
 ## install and test
 1. clone the repository. Use the following command:
-  ```
-   git clone https://github.com/AnoudAlshnakat/WASP_DECIDE.git
-   ```
+```
+git clone https://github.com/AnoudAlshnakat/WASP_DECIDE.git
+```
 2. To compile the test, use the following command:
-  ```
-   make test
-   ```
+```
+make test
+```
 3. To run the test, use the following command:
-    ```
-    ./test
-    ```
+```
+./test
+```
 
 
 ## references
