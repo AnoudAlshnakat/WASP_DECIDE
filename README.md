@@ -14,7 +14,7 @@ The project repository uses `TRAVIS Continous Integration`, to support the devel
 ## Test and Results
 unit-testing has been accomplished for 16 requirements, both passing cases and failing cases. Thus, in the `test_requirements.c` you will find 31 test cases, that could be run using the command on the bottom.
 
-## Files and contents:
+## Files and Contents:
 `DECIDE.c` contains the DECIDE function library implementation.
 
 `DECIDE.h` is the header file for the decide project, given in the excercise.
@@ -26,12 +26,12 @@ unit-testing has been accomplished for 16 requirements, both passing cases and f
 `.travis.yml` contains the initial configration for travic CI.
 
 
-## getting Started
+## Getting Started
 To get started, the project requires gcc-compiler to be installed.
 All versions are supposed to be okay to use, however, in this project the used one is: gcc (Ubuntu 7.5.0-3 ubuntu1~18.04) 7.5.0
 
 
-## install and test
+### Install and Test
 1. clone the repository. Use the following command:
 ```
 git clone https://github.com/AnoudAlshnakat/WASP_DECIDE.git
@@ -46,5 +46,5 @@ make test
 ```
 
 
-## references
+## References
 https://www.monperrus.net/martin/decide.pdf
