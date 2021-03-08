@@ -180,7 +180,7 @@ boolean LIC_3()
 
 
 
-which_quad(double x,double y)
+int which_quad(double x,double y)
 {
         if ((DOUBLECOMPARE(x,0) == GT) || (DOUBLECOMPARE(x,0) == EQ)) 
           {  if (DOUBLECOMPARE(y,0) == GT)
