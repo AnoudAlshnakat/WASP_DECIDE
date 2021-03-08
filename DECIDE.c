@@ -84,14 +84,14 @@ boolean LIC_1()
          
         if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
         {
-            printf("here 1 measured_r %f \n", measured_r);
+           // printf("here 1 measured_r %f \n", measured_r);
              return 1;
         } 
 
 
 
     }
-    printf("here 2 measured_r %f \n", measured_r);
+    //printf("here 2 measured_r %f \n", measured_r);
     return 0;
 }
 
@@ -123,7 +123,7 @@ boolean LIC_2()
     {
         ang = calculate_angle(P.X[i], P.X[i + 1], P.X[i + 2], P.Y[i], P.Y[i + 1], P.Y[i + 2]);
 
-        printf("PI - PARAMETERS.EPSILON %f \n", PI - PARAMETERS.EPSILON);
+      //  printf("PI - PARAMETERS.EPSILON %f \n", PI - PARAMETERS.EPSILON);
 
         if (isnan(ang))
         {
@@ -205,8 +205,8 @@ points that lie in more than QUADS quadrants.
 boolean LIC_4()
 {   int i,j;
     boolean Q[4]= {0,0,0,0};
-    printf("qPts %d \n", PARAMETERS.Q_PTS);
-     printf("nQuad %d \n", PARAMETERS.QUADS);
+   // printf("qPts %d \n", PARAMETERS.Q_PTS);
+    // printf("nQuad %d \n", PARAMETERS.QUADS);
     if ((2 > PARAMETERS.Q_PTS || PARAMETERS.Q_PTS > NUMPOINTS) || (PARAMETERS.QUADS>3 ||PARAMETERS.QUADS<1  )) {
             return 0;
         }
@@ -235,7 +235,7 @@ boolean LIC_4()
                break;
               }     
         }
-        printf("Q0 %d, Q1 %d, Q2 %d , Q3 %d  \n", Q[0] , Q[1], Q[2], Q[3] );
+       // printf("Q0 %d, Q1 %d, Q2 %d , Q3 %d  \n", Q[0] , Q[1], Q[2], Q[3] );
         if(Q[0]==1 && Q[1]==1 && Q[2]==1 && Q[3]==1){
             return 1;
         }
@@ -421,14 +421,14 @@ boolean LIC_8(){
          
         if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
         {
-            printf("here 1 measured_r %f \n", measured_r);
+          //  printf("here 1 measured_r %f \n", measured_r);
              return 1;
         } 
 
 
 
     }
-    printf("here 2 measured_r %f \n", measured_r);
+   // printf("here 2 measured_r %f \n", measured_r);
     return 0;
 
 }
@@ -454,7 +454,7 @@ boolean LIC_9()
         ang = calculate_angle(P.X[i], P.X[i + PARAMETERS.C_PTS +1], P.X[i +  PARAMETERS.C_PTS + PARAMETERS.D_PTS + 2], 
                               P.Y[i], P.Y[i + PARAMETERS.C_PTS +1], P.Y[i +  PARAMETERS.C_PTS + PARAMETERS.D_PTS + 2]);
 
-          printf("ang %f \n", ang);
+         // printf("ang %f \n", ang);
         if (isnan(ang))
         {
             
@@ -658,28 +658,28 @@ boolean LIC_13()
             measured_r= len1*len2*len3/(4*a);
         } 
          
-        printf("measured_r %f \n", measured_r);
-        printf("RADIUS1 %f \n", PARAMETERS.RADIUS1);
+    //    printf("measured_r %f \n", measured_r);
+     //   printf("RADIUS1 %f \n", PARAMETERS.RADIUS1);
 
         if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT) 
         {
             cond1 = 1;
-            printf("cond1 %d \n", DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT);
+           // printf("cond1 %d \n", DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS1) == GT);
         }  
          if (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS2) != GT)
         {
             cond2 = 1;
-            printf("cond2 %d \n", (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS2) != GT));
+           // printf("cond2 %d \n", (DOUBLECOMPARE(measured_r, PARAMETERS.RADIUS2) != GT));
         }
 
        if (cond1 ==1 && cond2 == 1) 
       {return 1;}
 
-        printf("here 1\n");
+      //  printf("here 1\n");
 
   
     }
-     printf("here 2\n");
+     //printf("here 2\n");
      return 0;
 
 
@@ -723,19 +723,19 @@ boolean LIC_14()
 
         //area of tringle
         a = sqrt(sp*(sp-len1)*(sp-len2)*(sp-len3));
-        printf("area %f \n", a);
+       // printf("area %f \n", a);
 
         if (DOUBLECOMPARE(a, PARAMETERS.AREA1) == GT)
         {
             cond1 = 1;
-            printf("cond1 %d \n", DOUBLECOMPARE(a, PARAMETERS.AREA1) == GT);
+           // printf("cond1 %d \n", DOUBLECOMPARE(a, PARAMETERS.AREA1) == GT);
 
         }
 
         if (DOUBLECOMPARE(a, PARAMETERS.AREA2) == LT)
         {
             cond2 = 1;
-            printf("cond2 %d \n", (DOUBLECOMPARE(a, PARAMETERS.AREA2) == LT));
+          //  printf("cond2 %d \n", (DOUBLECOMPARE(a, PARAMETERS.AREA2) == LT));
         }
 
         if(cond1 == 1 && cond2 == 1)
