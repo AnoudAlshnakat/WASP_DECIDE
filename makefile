@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS = -I. -Wall -lm 
+CFLAGS = -I. -lm 
 DEPS   = DECIDE.h
 OBJ    = DECIDE.o main.o
 SRC    = main.c DECIDE.c
