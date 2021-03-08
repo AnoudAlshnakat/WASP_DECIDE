@@ -599,7 +599,7 @@ boolean LIC_14_Fail_case1()
 }
 
 
-test_all_LIC()
+void test_all_LIC()
 {   //LIC0 test cases call 
 
    if (LIC_0_Pass_case1() == 1) 
