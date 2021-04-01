@@ -47,11 +47,37 @@ LIC_1:
 There exists at least one set of three consecutive data points
 that cannot all be contained within or on a circle of radius RADIUS1.
 ************************************************************/
+
+// takes three lengths as input and returns the area of teh triangle
+double triangle_area(double l1, double l2, double l3)
+{
+    double semi_parameter, calculated_area, val_H;
+    double diff_sp_l1, diff_sp_l2, diff_sp_l3;
+   
+    //calculaute the semi-perimeter of the triangle
+    semi_parameter = (l1 + l2 + l3) / 2;
+
+    //area of triangle based on Heron's formula
+
+    //difference between the semi parameter and each length
+    diff_sp_l1 = semi_parameter - l1;
+    diff_sp_l2 = semi_parameter - l2;
+    diff_sp_l3 = semi_parameter - l3;
+
+    //value of Heron's formula to be used
+    val_H = semi_parameter * (diff_sp_l1) * (diff_sp_l2) * (diff_sp_l3);
+
+    //the area calculated from that
+    calculated_area = sqrt(val_H);
+
+    return calculated_area;
+}
+
 boolean LIC_1()
 {
     int i;
     double len1, len2, len3; //triengles sides length
-    double sp, a;            //semi parameter and area of the tringle
+    double a;                //semi parameter and area of the tringle
     double measured_r;       //measured radius
 
     for (i = 0; i < (NUMPOINTS - 2); i++)
@@ -62,11 +88,7 @@ boolean LIC_1()
         len2 = length(P.X[i + 1], P.Y[i + 1], P.X[i + 2], P.Y[i + 2]);
         len3 = length(P.X[i + 2], P.Y[i + 2], P.X[i], P.Y[i]);
 
-        //calculaute the semi-perimeter of the tringle
-        sp = (len1 + len2 + len3) / 2;
-
-        //area of tringle
-        a = sqrt(sp * (sp - len1) * (sp - len2) * (sp - len3));
+        a = triangle_area(len1, len2, len3);
 
         if (DOUBLECOMPARE(a, 0) == EQ)
         {
