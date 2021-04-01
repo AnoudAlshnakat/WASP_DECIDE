@@ -377,14 +377,19 @@ exactly K PTS consecutive in- tervening points that are a
 distance greater than the length, LENGTH1, apart. 
 The condition is not met when NUMPOINTS < 3
 ************************************************************/
+
+boolean LIC_7_precondition()
+{
+    return ((NUMPOINTS < 3) ||
+            ((PARAMETERS.K_PTS > (NUMPOINTS - 2)) || PARAMETERS.K_PTS < 1));
+}
+
 boolean LIC_7()
 {
     int i;
     double dist;
 
-    if (NUMPOINTS < 3)
-        return 0;
-    if ((PARAMETERS.K_PTS > (NUMPOINTS - 2)) || PARAMETERS.K_PTS < 1)
+    if (LIC_7_precondition())
         return 0;
 
     for (i = 0; i < (NUMPOINTS - PARAMETERS.K_PTS - 1); i++)
