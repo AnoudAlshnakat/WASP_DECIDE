@@ -105,7 +105,7 @@ angle < (PI−EPSILON) or angle > (PI+EPSILON)
 boolean LIC_2()
 {
     int i;
-    double ang;
+    double angle;
     // X coodinates for three points
     double point_a_X, point_b_X, point_c_X;
     // X coodinates for three points
@@ -122,14 +122,14 @@ boolean LIC_2()
         point_b_Y = P.Y[i + 1];
         point_c_Y = P.Y[i + 2];
 
-        ang = calculate_angle(point_a_X, point_b_X, point_c_X, point_a_Y, point_b_Y, point_c_Y);
+        angle = calculate_angle(point_a_X, point_b_X, point_c_X, point_a_Y, point_b_Y, point_c_Y);
 
         //  printf("PI - PARAMETERS.EPSILON %f \n", PI - PARAMETERS.EPSILON);
 
-        if (isnan(ang))
+        if (isnan(angle))
         {
         }
-        else if (((DOUBLECOMPARE(ang, (3.1415926535 - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (3.1415926535 + PARAMETERS.EPSILON)) == GT)))
+        else if (((DOUBLECOMPARE(angle, (3.1415926535 - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(angle, (3.1415926535 + PARAMETERS.EPSILON)) == GT)))
         {
             return 1;
         }
