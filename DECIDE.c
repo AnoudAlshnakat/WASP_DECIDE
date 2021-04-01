@@ -93,18 +93,18 @@ double calculate_angle(double x1, double x2, double x3, double y1, double y2, do
     double length_p1_pc = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); // length from first point to teh base
     double length_p2_pc = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2)); // length from second point to the base
     double length_p1_p2 = sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2)); // length from point 1 to point 2
-    
+
     //length square of each tringle side
     double length_p1_pc_sqr = length_p1_pc * length_p1_pc;
     double length_p2_pc_sqr = length_p2_pc * length_p2_pc;
     double length_p1_p2_sqr = length_p1_p2 * length_p1_p2;
 
     //to find the angle we need to calculate the arch COS(value1/value2)
-    double value1= length_p2_pc_sqr + length_p1_pc_sqr - length_p1_p2_sqr;
-    double value2= 2 * length_p2_pc * length_p1_pc;
+    double value1 = length_p2_pc_sqr + length_p1_pc_sqr - length_p1_p2_sqr;
+    double value2 = 2 * length_p2_pc * length_p1_pc;
 
     //calculated angle
-    double angle = acos(value1/value2);
+    double angle = acos(value1 / value2);
 
     return angle;
 }
@@ -224,7 +224,7 @@ boolean LIC_4()
     for (i = 0; i <= NUMPOINTS - PARAMETERS.Q_PTS; i++)
     {
         for (j = 0; j < PARAMETERS.Q_PTS; j++)
-        {   
+        {
             int index = j + i;
             double point_X = P.X[index];
             double point_Y = P.Y[index];
@@ -826,7 +826,6 @@ void generate_FUV()
         {
             FUV[i] == 1;
         }
-
     }
 }
 
