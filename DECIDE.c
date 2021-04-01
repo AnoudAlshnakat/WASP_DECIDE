@@ -117,9 +117,9 @@ double calculate_angle(double x1, double x2, double x3, double y1, double y2, do
     double length_p1_p2 = sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2)); // length from point 1 to point 2
 
     //length square of each tringle side
-    double length_p1_pc_sqr = length_p1_pc * length_p1_pc;
-    double length_p2_pc_sqr = length_p2_pc * length_p2_pc;
-    double length_p1_p2_sqr = length_p1_p2 * length_p1_p2;
+    double length_p1_pc_sqr = pow(length_p1_pc, 2);
+    double length_p2_pc_sqr = pow(length_p2_pc, 2);
+    double length_p1_p2_sqr = pow(length_p1_p2, 2);
 
     //to find the angle we need to calculate the arch COS(value1/value2)
     double value1 = length_p2_pc_sqr + length_p1_pc_sqr - length_p1_p2_sqr;
