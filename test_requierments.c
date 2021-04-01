@@ -20,7 +20,7 @@ boolean LIC_0_Pass_case1()
     //on a distance that are larger than LENGTH1
     boolean result = LIC_0();
     assert(result == 1);
-    return result; 
+    return result;
 }
 
 boolean LIC_0_Fail_case1()
@@ -33,13 +33,12 @@ boolean LIC_0_Fail_case1()
     P.Y = Y;
     PARAMETERS.LENGTH1 = 100;
 
-    //LIC_0 should fail because there is no distance between 
+    //LIC_0 should fail because there is no distance between
     //any two consequent points larger than LENGTH1
     boolean result = LIC_0();
     assert(result == 0);
-    return result; 
+    return result;
 }
-
 
 boolean LIC_0_Fail_case2()
 {
@@ -53,9 +52,8 @@ boolean LIC_0_Fail_case2()
     //LIC_0 should fail because LENGTH1 is less than 0
     boolean result = LIC_0();
     assert(result == 0);
-    return result; 
+    return result;
 }
-
 
 /****************************************
 LIC1 test cases: 1 passing and 1 failing
@@ -77,13 +75,12 @@ boolean LIC_1_Pass_case1()
     return result;
 }
 
-
 boolean LIC_1_Fail_case1()
 {
     //test inputs: Number of points = 5, the parameter RADIUS1 = 1 unit, and coordinates of 5 points.
     NUMPOINTS = 5;
-    double X[] = {1,2,3,4,5};
-    double Y[] = {0,0,0,0,0};
+    double X[] = {1, 2, 3, 4, 5};
+    double Y[] = {0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
     PARAMETERS.RADIUS1 = 1;
@@ -93,7 +90,6 @@ boolean LIC_1_Fail_case1()
     assert(result == 0);
     return result;
 }
-
 
 /****************************************
 LIC2 test cases: 1 passing and 1 failing
@@ -106,7 +102,7 @@ boolean LIC_2_Pass_case1()
     double Y[] = {1, 0, 0, 0, 3};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.EPSILON=1;
+    PARAMETERS.EPSILON = 1;
     //LIC_2 should pass because the angle created in the first three points is 90 degrees
     //which is larger than PI+EPSILON, thus requirement is satisfied.
     boolean result = LIC_2();
@@ -122,14 +118,13 @@ boolean LIC_2_Fail_case1()
     double Y[] = {0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.EPSILON=1;
-    //LIC_2 should fail because the angle created is 0, so it is not larger that PI+EPSILON 
+    PARAMETERS.EPSILON = 1;
+    //LIC_2 should fail because the angle created is 0, so it is not larger that PI+EPSILON
     //or smaller than PI-EPSILON
     boolean result = LIC_2();
     assert(result == 0);
     return result;
 }
-
 
 /****************************************
 LIC3 test cases: 1 passing and 1 failing
@@ -150,7 +145,6 @@ boolean LIC_3_Pass_case1()
     return result;
 }
 
-
 boolean LIC_3_Fail_case1()
 {
     //test inputs: Number of points = 10, the parameter AREA = 3 unit, and coordinates of 10 points.
@@ -167,7 +161,6 @@ boolean LIC_3_Fail_case1()
     return result;
 }
 
-
 /****************************************
 LIC4 test cases: 1 passing and 1 failing
 ****************************************/
@@ -181,8 +174,8 @@ boolean LIC_4_Pass_case1()
     P.Y = Y;
     PARAMETERS.Q_PTS = 3;
     PARAMETERS.QUADS = 3;
-    //LIC_4 should pass because there exist three points Q_pts with coordinates lay in three 
-    //different QUADS 
+    //LIC_4 should pass because there exist three points Q_pts with coordinates lay in three
+    //different QUADS
     boolean result = LIC_4();
     assert(result == 1);
     return result;
@@ -198,7 +191,7 @@ boolean LIC_4_Fail_case1()
     P.Y = Y;
     PARAMETERS.Q_PTS = 2;
     PARAMETERS.QUADS = 1;
-    //LIC_4 should fail because all the exsisting points are in the first Quadrant 
+    //LIC_4 should fail because all the exsisting points are in the first Quadrant
     boolean result = LIC_4();
     assert(result == 0);
     return result;
@@ -212,7 +205,7 @@ boolean LIC_5_Pass_case1()
     //test inputs: Number of points with X coordinate = 10
     NUMPOINTS = 10;
     double X[] = {1, 2, 3, 5, 4, 2, 1, 1, 0, 0};
-    double Y[] = {3, 6, 2,-1, 7, 8, 1, 3, 4, 5};
+    double Y[] = {3, 6, 2, -1, 7, 8, 1, 3, 4, 5};
     P.X = X;
     P.Y = Y;
     //LIC_5 should pass because there exist at least two consecutive points
@@ -247,15 +240,14 @@ boolean LIC_6_Pass_case1()
     double Y[] = {3, 12, 3, 3, 3, 3, 3, 3, 3, 3};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.DIST= 0.5;    
-    PARAMETERS.N_PTS= 3;
-    //LIC_6 should pass because the there is a set of 3 N_PTS points such that 
-    //the distance between them is greater than DIST = 0.5 unit. 
+    PARAMETERS.DIST = 0.5;
+    PARAMETERS.N_PTS = 3;
+    //LIC_6 should pass because the there is a set of 3 N_PTS points such that
+    //the distance between them is greater than DIST = 0.5 unit.
     boolean result = LIC_6();
     assert(result == 1);
     return result;
 }
-
 
 boolean LIC_6_Fail_case1()
 {
@@ -265,15 +257,14 @@ boolean LIC_6_Fail_case1()
     double Y[] = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.DIST= 1;    
-    PARAMETERS.N_PTS= 3;
+    PARAMETERS.DIST = 1;
+    PARAMETERS.N_PTS = 3;
     //LIC_6 should fail because there is not exsist three consecutive points, where the distance between the
-    //first point and the last one is larger than the DIST (1). 
+    //first point and the last one is larger than the DIST (1).
     boolean result = LIC_6();
     assert(result == 0);
     return result;
 }
-
 
 /****************************************
 LIC7 test cases: 1 passing and 1 failing
@@ -286,8 +277,8 @@ boolean LIC_7_Pass_case1()
     double Y[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.LENGTH1 =  1;
-    PARAMETERS.K_PTS   =  3;
+    PARAMETERS.LENGTH1 = 1;
+    PARAMETERS.K_PTS = 3;
     //LIC_7 should pass because there exsist two points separated by 3 other points (K_PTS),
     //where the distance is lareger than LENGTH 1
     boolean result = LIC_7();
@@ -303,15 +294,14 @@ boolean LIC_7_Fail_case1()
     double Y[] = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.LENGTH1 =  8;
-    PARAMETERS.K_PTS   =  3;
+    PARAMETERS.LENGTH1 = 8;
+    PARAMETERS.K_PTS = 3;
     //LIC_7 should fail because there exsist NO two points separated by 3 other points (K_PTS),
     //where the distance is lareger than LENGTH 8
     boolean result = LIC_7();
     assert(result == 0);
     return result;
 }
-
 
 /****************************************
 LIC8 test cases: 1 passing and 1 failing
@@ -324,10 +314,10 @@ boolean LIC_8_Pass_case1()
     double Y[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.A_PTS=2;   
-    PARAMETERS.B_PTS=1;
-    PARAMETERS.RADIUS1=3.5;
-    //LIC_8 should pass because the minimal radius that the first set of points will fit in a 
+    PARAMETERS.A_PTS = 2;
+    PARAMETERS.B_PTS = 1;
+    PARAMETERS.RADIUS1 = 3.5;
+    //LIC_8 should pass because the minimal radius that the first set of points will fit in a
     // radius of 6 units, and this is larger than the parameter RADIUS1 = 3.5
     boolean result = LIC_8();
     assert(result == 1);
@@ -342,10 +332,10 @@ boolean LIC_8_Fail_case1()
     double Y[] = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.A_PTS=2;   
-    PARAMETERS.B_PTS=2;
-    PARAMETERS.RADIUS1=9;
-    //LIC_8 should fail because the minimal radius that the first set of points will fit in a 
+    PARAMETERS.A_PTS = 2;
+    PARAMETERS.B_PTS = 2;
+    PARAMETERS.RADIUS1 = 9;
+    //LIC_8 should fail because the minimal radius that the first set of points will fit in a
     // radius of 6 units, and this is larger than the parameter RADIUS1 = 3.5
     boolean result = LIC_8();
     assert(result == 0);
@@ -363,16 +353,15 @@ boolean LIC_9_Pass_case1()
     double Y[] = {1, 0, 0, 0, 1, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.C_PTS=1;       
-    PARAMETERS.D_PTS=1;
-    PARAMETERS.EPSILON=1;
+    PARAMETERS.C_PTS = 1;
+    PARAMETERS.D_PTS = 1;
+    PARAMETERS.EPSILON = 1;
     //LIC_9 should pass because the angle created in the first three points is 90 degrees
     //which is larger than PI+EPSILON, thus requirement is satisfied.
     boolean result = LIC_9();
     assert(result == 1);
     return result;
 }
-
 
 boolean LIC_9_Fail_case1()
 {
@@ -382,17 +371,15 @@ boolean LIC_9_Fail_case1()
     double Y[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.C_PTS=1;       
-    PARAMETERS.D_PTS=2;
-    PARAMETERS.EPSILON=PI;
+    PARAMETERS.C_PTS = 1;
+    PARAMETERS.D_PTS = 2;
+    PARAMETERS.EPSILON = 3.1415926535;
     //LIC_9 should fail because the angle created in any three consecutive points is 0, so
     //the condition is not satisfied because 0 == PI-EPSLION, i.e. it is not less or nor larger than PI-EPSILON
     boolean result = LIC_9();
     assert(result == 0);
     return result;
 }
-
-
 
 /****************************************
 LIC10 test cases: 1 passing and 1 failing
@@ -405,7 +392,7 @@ boolean LIC_10_Pass_case1()
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.AREA1 = 1.8; 
+    PARAMETERS.AREA1 = 1.8;
     PARAMETERS.F_PTS = 4;
     PARAMETERS.E_PTS = 1;
     //LIC_10 should pass because there is three set of points namely X[2]Y[2], X[4]Y[4] and X[9]Y[9]
@@ -415,7 +402,6 @@ boolean LIC_10_Pass_case1()
     return result;
 }
 
-
 boolean LIC_10_Fail_case1()
 {
     //test inputs: Number of points = 10, the parameter F_PTS = 4, E_PTS = 1,  AREA1 = 3, and coordinates of 10 points.
@@ -424,7 +410,7 @@ boolean LIC_10_Fail_case1()
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.AREA1 = 3; 
+    PARAMETERS.AREA1 = 3;
     PARAMETERS.F_PTS = 4;
     PARAMETERS.E_PTS = 1;
     //LIC_9 should fail because there is NO three set of points with the separation number E_PTS and F_PTS
@@ -445,8 +431,8 @@ boolean LIC_11_Pass_case1()
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.G_PTS=2;
-    //LIC_11 should pass because the coordinate x is decreasing which makes the 
+    PARAMETERS.G_PTS = 2;
+    //LIC_11 should pass because the coordinate x is decreasing which makes the
     // condition X[j] - X[i] < 0  true, where j is G_PTS +i apart from the point at position i.
     boolean result = LIC_11();
     assert(result == 1);
@@ -461,14 +447,13 @@ boolean LIC_11_Fail_case1()
     double Y[] = {0, 0, 2, 0, 0, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.G_PTS=2;
-    //LIC_11 should fail because the coordinate x is increasing which makes the 
+    PARAMETERS.G_PTS = 2;
+    //LIC_11 should fail because the coordinate x is increasing which makes the
     // condition X[j] > X[i] false, where j is G_PTS +i apart from the point at position i.
     boolean result = LIC_11();
     assert(result == 0);
     return result;
 }
-
 
 /****************************************
 LIC12 test cases: 1 passing and 1 failing
@@ -484,14 +469,13 @@ boolean LIC_12_Pass_case1()
     PARAMETERS.LENGTH1 = 5;
     PARAMETERS.LENGTH2 = 10;
     PARAMETERS.K_PTS = 2;
-    //LIC_12 should pass because there exsist two points that are K_PTS apart, where the distance 
+    //LIC_12 should pass because there exsist two points that are K_PTS apart, where the distance
     //between them is larger than LENGTH1, and also
     //there exsist other two points the distance is less than LENGTH2
     boolean result = LIC_12();
     assert(result == 1);
     return result;
 }
-
 
 boolean LIC_12_Fail_case1()
 {
@@ -504,7 +488,7 @@ boolean LIC_12_Fail_case1()
     PARAMETERS.LENGTH1 = 4;
     PARAMETERS.LENGTH2 = 1;
     PARAMETERS.K_PTS = 2;
-    //LIC_12 should fail because there is NO exsist two points that are K_PTS apart, where the 
+    //LIC_12 should fail because there is NO exsist two points that are K_PTS apart, where the
     //distance is less than LENGTH2, thus it cotradict one of the sub conditions
     boolean result = LIC_12();
     assert(result == 0);
@@ -522,19 +506,18 @@ boolean LIC_13_Pass_case1()
     double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.RADIUS1 = 0.5; 
+    PARAMETERS.RADIUS1 = 0.5;
     PARAMETERS.RADIUS2 = 3;
     PARAMETERS.A_PTS = 2;
     PARAMETERS.B_PTS = 2;
-    //LIC_13 should pass because there exsist a pair of points, far away from each other 
-    //2 points (A_PTS), in the list of coordinates, 
+    //LIC_13 should pass because there exsist a pair of points, far away from each other
+    //2 points (A_PTS), in the list of coordinates,
     //that cannot fit in a circle with radius 0.5 unit, AND there exist a a pair of point
     //far away from eachother 2 points unit (B_PTS), that can fit in a circle of RADIUS2.
     boolean result = LIC_13();
     assert(result == 1);
     return result;
 }
-
 
 boolean LIC_13_Fail_case1()
 {
@@ -544,11 +527,11 @@ boolean LIC_13_Fail_case1()
     double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.RADIUS1 = 4; 
+    PARAMETERS.RADIUS1 = 4;
     PARAMETERS.RADIUS2 = 3;
     PARAMETERS.A_PTS = 2;
     PARAMETERS.B_PTS = 2;
-    //LIC_13 should fail because there is not exsist a pair of points, far away from each other 
+    //LIC_13 should fail because there is not exsist a pair of points, far away from each other
     //2 points (A_PTS) that cannot fit in a circle with radius 0.5 unit, thus, the condition LIC13 doesn't hold.
     boolean result = LIC_13();
     assert(result == 0);
@@ -566,7 +549,7 @@ boolean LIC_14_Pass_case1()
     double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.AREA1 = 2; 
+    PARAMETERS.AREA1 = 2;
     PARAMETERS.AREA2 = 14;
     PARAMETERS.E_PTS = 2;
     PARAMETERS.F_PTS = 2;
@@ -587,7 +570,7 @@ boolean LIC_14_Fail_case1()
     double Y[] = {1, 0, 5, 5, 2, 0, 0, 0, 0, 0};
     P.X = X;
     P.Y = Y;
-    PARAMETERS.AREA1 = 2; 
+    PARAMETERS.AREA1 = 2;
     PARAMETERS.AREA2 = 1;
     PARAMETERS.E_PTS = 2;
     PARAMETERS.F_PTS = 2;
@@ -598,186 +581,180 @@ boolean LIC_14_Fail_case1()
     return result;
 }
 
-
 void test_all_LIC()
-{   //LIC0 test cases call 
+{ //LIC0 test cases call
 
-   if (LIC_0_Pass_case1() == 1) 
-   printf("LIC_0 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_0 test case 1 for passing input : FAILED \n");
+    if (LIC_0_Pass_case1() == 1)
+        printf("LIC_0 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_0 test case 1 for passing input : FAILED \n");
 
+    if (LIC_0_Fail_case1() == 0)
+        printf("LIC_0 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_0 test case 1 for failing input : FAILED \n");
 
-   if (LIC_0_Fail_case1() == 0) 
-   printf("LIC_0 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_0 test case 1 for failing input : FAILED \n");
+    if (LIC_0_Fail_case2() == 0)
+        printf("LIC_0 test case 2 for failing input : PASSED \n");
+    else
+        printf("LIC_0 test case 2 for failing input : FAILED \n");
 
+    //LIC1 test cases call
+    if (LIC_1_Pass_case1() == 1)
+        printf("LIC_1 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_1 test case 1 for passing input : FAILED \n");
 
-   if (LIC_0_Fail_case2() == 0) 
-   printf("LIC_0 test case 2 for failing input : PASSED \n");
-   else
-   printf("LIC_0 test case 2 for failing input : FAILED \n");
-
-    //LIC1 test cases call 
-   if (LIC_1_Pass_case1() == 1) 
-   printf("LIC_1 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_1 test case 1 for passing input : FAILED \n");
-
-   if (LIC_1_Fail_case1() == 0) 
-   printf("LIC_1 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_1 test case 1 for failing input : FAILED \n");
+    if (LIC_1_Fail_case1() == 0)
+        printf("LIC_1 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_1 test case 1 for failing input : FAILED \n");
 
     //LIC2 test cases call
-   if (LIC_2_Pass_case1() == 1) 
-   printf("LIC_2 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_2 test case 1 for passing input : FAILED \n");
+    if (LIC_2_Pass_case1() == 1)
+        printf("LIC_2 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_2 test case 1 for passing input : FAILED \n");
 
-   if (LIC_2_Fail_case1() == 0) 
-   printf("LIC_2 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_2 test case 1 for failing input : FAILED \n");
+    if (LIC_2_Fail_case1() == 0)
+        printf("LIC_2 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_2 test case 1 for failing input : FAILED \n");
 
-   //LIC3 test cases call
-   if (LIC_3_Pass_case1() == 1) 
-   printf("LIC_3 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_3 test case 1 for passing input : FAILED \n");
+    //LIC3 test cases call
+    if (LIC_3_Pass_case1() == 1)
+        printf("LIC_3 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_3 test case 1 for passing input : FAILED \n");
 
-   if (LIC_3_Fail_case1() == 0) 
-   printf("LIC_3 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_3 test case 1 for failing input : FAILED \n");
+    if (LIC_3_Fail_case1() == 0)
+        printf("LIC_3 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_3 test case 1 for failing input : FAILED \n");
 
-   //LIC4 test cases call
-   if (LIC_4_Pass_case1() == 1) 
-   printf("LIC_4 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_4 test case 1 for passing input : FAILED \n");
+    //LIC4 test cases call
+    if (LIC_4_Pass_case1() == 1)
+        printf("LIC_4 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_4 test case 1 for passing input : FAILED \n");
 
-   if (LIC_4_Fail_case1() == 0) 
-   printf("LIC_4 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_4 test case 1 for failing input : FAILED \n");
+    if (LIC_4_Fail_case1() == 0)
+        printf("LIC_4 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_4 test case 1 for failing input : FAILED \n");
 
-   //LIC5 test cases call
-   if (LIC_5_Pass_case1() == 1) 
-   printf("LIC_5 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_5 test case 1 for passing input : FAILED \n");
+    //LIC5 test cases call
+    if (LIC_5_Pass_case1() == 1)
+        printf("LIC_5 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_5 test case 1 for passing input : FAILED \n");
 
-   if (LIC_5_Fail_case1() == 0) 
-   printf("LIC_5 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_5 test case 1 for failing input : FAILED \n");
+    if (LIC_5_Fail_case1() == 0)
+        printf("LIC_5 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_5 test case 1 for failing input : FAILED \n");
 
-   //LIC6 test cases call
-   if (LIC_6_Pass_case1() == 1) 
-   printf("LIC_6 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_6 test case 1 for passing input : FAILED \n");
-   
-   if (LIC_6_Fail_case1() == 0) 
-   printf("LIC_6 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_6 test case 1 for failing input : FAILED \n");
+    //LIC6 test cases call
+    if (LIC_6_Pass_case1() == 1)
+        printf("LIC_6 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_6 test case 1 for passing input : FAILED \n");
 
-   //LIC7 test cases call
-   if (LIC_7_Pass_case1() == 1) 
-   printf("LIC_7 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_7 test case 1 for passing input : FAILED \n");
+    if (LIC_6_Fail_case1() == 0)
+        printf("LIC_6 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_6 test case 1 for failing input : FAILED \n");
 
-   if (LIC_7_Fail_case1() == 0) 
-   printf("LIC_7 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_7 test case 1 for failing input : FAILED \n");
+    //LIC7 test cases call
+    if (LIC_7_Pass_case1() == 1)
+        printf("LIC_7 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_7 test case 1 for passing input : FAILED \n");
 
-   //LIC8 test cases call
-   if (LIC_8_Pass_case1() == 1) 
-   printf("LIC_8 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_8 test case 1 for passing input : FAILED \n");
+    if (LIC_7_Fail_case1() == 0)
+        printf("LIC_7 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_7 test case 1 for failing input : FAILED \n");
 
-   if (LIC_8_Fail_case1() == 0) 
-   printf("LIC_8 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_8 test case 1 for failing input : FAILED \n");
+    //LIC8 test cases call
+    if (LIC_8_Pass_case1() == 1)
+        printf("LIC_8 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_8 test case 1 for passing input : FAILED \n");
 
-   //LIC9 test cases call
-   if (LIC_9_Pass_case1() == 1) 
-   printf("LIC_9 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_9 test case 1 for passing input : FAILED \n");
+    if (LIC_8_Fail_case1() == 0)
+        printf("LIC_8 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_8 test case 1 for failing input : FAILED \n");
 
-   if (LIC_9_Fail_case1() == 0) 
-   printf("LIC_9 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_9 test case 1 for failing input : FAILED \n");
+    //LIC9 test cases call
+    if (LIC_9_Pass_case1() == 1)
+        printf("LIC_9 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_9 test case 1 for passing input : FAILED \n");
 
-   //LIC10 test cases call
-   if (LIC_10_Pass_case1() == 1) 
-   printf("LIC_10 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_10 test case 1 for passing input : FAILED \n");
+    if (LIC_9_Fail_case1() == 0)
+        printf("LIC_9 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_9 test case 1 for failing input : FAILED \n");
 
-   if (LIC_10_Fail_case1() == 0) 
-   printf("LIC_10 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_10 test case 1 for failing input : FAILED \n");
+    //LIC10 test cases call
+    if (LIC_10_Pass_case1() == 1)
+        printf("LIC_10 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_10 test case 1 for passing input : FAILED \n");
 
-   //LIC11 test cases call
-   if (LIC_11_Pass_case1() == 1) 
-   printf("LIC_11 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_11 test case 1 for passing input : FAILED \n");
+    if (LIC_10_Fail_case1() == 0)
+        printf("LIC_10 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_10 test case 1 for failing input : FAILED \n");
 
-   if (LIC_11_Fail_case1() == 0) 
-   printf("LIC_11 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_11 test case 1 for failing input : FAILED \n");
- 
-   //LIC12 test cases call
-   if (LIC_12_Pass_case1() == 1) 
-   printf("LIC_12 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_12 test case 1 for passing input : FAILED \n");
+    //LIC11 test cases call
+    if (LIC_11_Pass_case1() == 1)
+        printf("LIC_11 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_11 test case 1 for passing input : FAILED \n");
 
-   if (LIC_12_Fail_case1() == 0) 
-   printf("LIC_12 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_12 test case 1 for failing input : FAILED \n");
+    if (LIC_11_Fail_case1() == 0)
+        printf("LIC_11 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_11 test case 1 for failing input : FAILED \n");
 
-   //LIC13 test cases call
-   if (LIC_13_Pass_case1() == 1) 
-   printf("LIC_13 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_13 test case 1 for passing input : FAILED \n");
+    //LIC12 test cases call
+    if (LIC_12_Pass_case1() == 1)
+        printf("LIC_12 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_12 test case 1 for passing input : FAILED \n");
 
-  if (LIC_13_Fail_case1() == 0) 
-   printf("LIC_13 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_13 test case 1 for failing input : FAILED \n");
+    if (LIC_12_Fail_case1() == 0)
+        printf("LIC_12 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_12 test case 1 for failing input : FAILED \n");
 
-   //LIC14 test cases call
-   if (LIC_14_Pass_case1() == 1) 
-   printf("LIC_14 test case 1 for passing input : PASSED \n");
-   else
-   printf("LIC_14 test case 1 for passing input : FAILED \n");
+    //LIC13 test cases call
+    if (LIC_13_Pass_case1() == 1)
+        printf("LIC_13 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_13 test case 1 for passing input : FAILED \n");
 
-   if (LIC_14_Fail_case1() == 0) 
-   printf("LIC_14 test case 1 for failing input : PASSED \n");
-   else
-   printf("LIC_14 test case 1 for failing input : FAILED \n");
+    if (LIC_13_Fail_case1() == 0)
+        printf("LIC_13 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_13 test case 1 for failing input : FAILED \n");
 
+    //LIC14 test cases call
+    if (LIC_14_Pass_case1() == 1)
+        printf("LIC_14 test case 1 for passing input : PASSED \n");
+    else
+        printf("LIC_14 test case 1 for passing input : FAILED \n");
+
+    if (LIC_14_Fail_case1() == 0)
+        printf("LIC_14 test case 1 for failing input : PASSED \n");
+    else
+        printf("LIC_14 test case 1 for failing input : FAILED \n");
 }
-
 
 void main()
 { //Test the requirements function call
-  test_all_LIC();
-
+    test_all_LIC();
 }

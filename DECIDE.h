@@ -1,9 +1,6 @@
 // This is version 4 of this file.
 #include <math.h>
 
-//constant
-static const double PI = 3.1415926535;
-
 //type declarations
 typedef enum
 {
@@ -70,10 +67,11 @@ static COORDINATE X2;
 //COORDINATE Y [];
 static COORDINATE Y2;
 
-typedef struct {
-  COORDINATE X;
-  COORDINATE Y;
-}POINT_COORDNATE;
+typedef struct
+{
+    COORDINATE X;
+    COORDINATE Y;
+} POINT_COORDNATE;
 
 POINT_COORDNATE P;
 
@@ -131,6 +129,5 @@ boolean LIC_11();
 boolean LIC_12();
 boolean LIC_13();
 boolean LIC_14();
-
 
 //////////// end of file /////////////
