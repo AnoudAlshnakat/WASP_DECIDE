@@ -813,9 +813,7 @@ void generate_FUV()
         {
             FUV[i] == 1;
         }
-        else
-        {
-        }
+
     }
 }
 
