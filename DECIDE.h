@@ -1,6 +1,10 @@
 // This is version 4 of this file.
 #include <math.h>
 
+// constant declaration
+static const double PI = 3.1415926535;
+
+
 //type declarations
 typedef enum
 {

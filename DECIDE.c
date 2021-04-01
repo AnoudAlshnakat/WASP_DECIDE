@@ -129,7 +129,7 @@ boolean LIC_2()
         if (isnan(angle))
         {
         }
-        else if (((DOUBLECOMPARE(angle, (3.1415926535 - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(angle, (3.1415926535 + PARAMETERS.EPSILON)) == GT)))
+        else if (((DOUBLECOMPARE(angle, (PI - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(angle, (PI + PARAMETERS.EPSILON)) == GT)))
         {
             return 1;
         }
@@ -450,7 +450,7 @@ boolean LIC_9()
         if (isnan(ang))
         {
         }
-        else if (((DOUBLECOMPARE(ang, (3.1415926535 - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (3.1415926535 + PARAMETERS.EPSILON)) == GT)))
+        else if (((DOUBLECOMPARE(ang, (PI - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (PI + PARAMETERS.EPSILON)) == GT)))
         {
             return 1;
         }
