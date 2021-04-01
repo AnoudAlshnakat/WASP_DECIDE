@@ -110,7 +110,7 @@ boolean LIC_2()
     double point_a_X, point_b_X, point_c_X;
     // X coodinates for three points
     double point_a_Y, point_b_Y, point_c_Y;
-    
+
     for (i = 0; i < (NUMPOINTS - 2); i++)
     {
         //the angle between three points, where point_a and point_c coincide with the vertex that is point_b
@@ -211,10 +211,12 @@ boolean LIC_4()
     for (i = 0; i <= NUMPOINTS - PARAMETERS.Q_PTS; i++)
     {
         for (j = 0; j < PARAMETERS.Q_PTS; j++)
-        {
+        {   
             int index = j + i;
+            double point_X = P.X[index];
+            double point_Y = P.Y[index];
 
-            switch (which_quad(P.X[index], P.Y[index]))
+            switch (which_quad(point_X, point_Y))
             {
             case 1:
                 Q[0] = 1;
