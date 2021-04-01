@@ -90,10 +90,10 @@ boolean LIC_1()
 
 double calculate_angle(double x1, double x2, double x3, double y1, double y2, double y3)
 {
-    double p1_c = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); // from first point to teh base
-    double p2_c = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2)); // from second point to the base
-    double p1_2 = sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2)); // from point 1 to point 2
-    return acos((p2_c * p2_c + p1_c * p1_c - p1_2 * p1_2) / (2 * p2_c * p1_c));
+    double length_p1_pc = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); // length from first point to teh base
+    double length_p2_pc = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2)); // length from second point to the base
+    double length_p1_p2 = sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2)); // length from point 1 to point 2
+    return acos((length_p2_pc * length_p2_pc + length_p1_pc * length_p1_pc - length_p1_p2 * length_p1_p2) / (2 * length_p2_pc * length_p1_pc));
 }
 
 /************************************************************
