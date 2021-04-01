@@ -106,9 +106,23 @@ boolean LIC_2()
 {
     int i;
     double ang;
+    // X coodinates for three points
+    double point_a_X, point_b_X, point_c_X;
+    // X coodinates for three points
+    double point_a_Y, point_b_Y, point_c_Y;
+    
     for (i = 0; i < (NUMPOINTS - 2); i++)
     {
-        ang = calculate_angle(P.X[i], P.X[i + 1], P.X[i + 2], P.Y[i], P.Y[i + 1], P.Y[i + 2]);
+        //the angle between three points, where point_a and point_c coincide with the vertex that is point_b
+        point_a_X = P.X[i];
+        point_b_X = P.X[i + 1];
+        point_c_X = P.X[i + 2];
+
+        point_a_Y = P.Y[i];
+        point_b_Y = P.Y[i + 1];
+        point_c_Y = P.Y[i + 2];
+
+        ang = calculate_angle(point_a_X, point_b_X, point_c_X, point_a_Y, point_b_Y, point_c_Y);
 
         //  printf("PI - PARAMETERS.EPSILON %f \n", PI - PARAMETERS.EPSILON);
 
