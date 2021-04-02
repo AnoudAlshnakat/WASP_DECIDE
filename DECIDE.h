@@ -97,15 +97,7 @@ boolean LAUNCH;
 //Final unlocking vector
 VECTOR PUV;
 
-// compares floating point numbers -- see Nonfunctional Requirements
-static inline COMPTYPE DOUBLECOMPARE(double A, double B)
-{
-    if (fabs(A - B) < 0.000001)
-        return EQ;
-    if (A < B)
-        return LT;
-    return GT;
-}
+
 
 // function you must write
 void DECIDE(void);

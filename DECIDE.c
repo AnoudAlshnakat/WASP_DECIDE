@@ -3,6 +3,19 @@
 #include <stdio.h>
 #include <assert.h>
 
+
+
+// compares floating point numbers -- see Nonfunctional Requirements
+static inline COMPTYPE DOUBLECOMPARE(double A, double B)
+{
+    if (fabs(A - B) < 0.000001)
+        return EQ;
+    if (A < B)
+        return LT;
+    return GT;
+}
+
+
 /************************************************************
 LIC_0: 
 There exists at least one set of two consecutive data points 
