@@ -475,6 +475,12 @@ by exactly C PTS and D PTS consecutive intervening points,
 respectively, that form an angle such that:
 angle < (PI−EPSILON) or angle > (PI+EPSILON)
 ************************************************************/
+boolean angle_comparision(double val1)
+{
+    double val_less    = (DOUBLECOMPARE(val1, (PI - PARAMETERS.EPSILON)) == LT);
+    double val_greater = (DOUBLECOMPARE(val1, (PI + PARAMETERS.EPSILON)) == GT);
+    return (val_less || val_greater);
+}
 boolean LIC_9()
 {
     if (NUMPOINTS < 5)
@@ -495,7 +501,7 @@ boolean LIC_9()
         if (isnan(ang))
         {
         }
-        else if (((DOUBLECOMPARE(ang, (PI - PARAMETERS.EPSILON)) == LT) || (DOUBLECOMPARE(ang, (PI + PARAMETERS.EPSILON)) == GT)))
+        else if (angle_comparision(ang))
         {
             return 1;
         }
