@@ -61,15 +61,6 @@ typedef struct
 
 //////////// global variable declarations ////////////
 PARAMETERS_T PARAMETERS;
-static PARAMETERS_T PARAMETERS2;
-
-// X coordinates of data points
-//COORDINATE X [];
-static COORDINATE X2;
-
-// Y coordinates of data points
-//COORDINATE Y [];
-static COORDINATE Y2;
 
 typedef struct
 {
@@ -85,23 +76,23 @@ static int NUMPOINTS2;
 
 // Logical Connector Matrix
 CMATRIX LCM;
-static CMATRIX LCM2;
+
 
 // Preliminary Unlocking Matrix
 BMATRIX PUM;
-static BMATRIX PUM2;
+
 
 // Conditions Met Vector
 VECTOR CMV;
-static VECTOR CMV2;
+
 
 // Final Unlocking Vector
 VECTOR FUV;
-static VECTOR FUV2;
+
 
 // Decision : Launch or No Launch
 boolean LAUNCH;
-static boolean LAUNCH2;
+
 
 //Final unlocking vector
 VECTOR PUV;
