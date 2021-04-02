@@ -843,10 +843,11 @@ void generate_PUM()
 /*
 function added to check that all members of the PUM are true
 */
+int number_of_total_LICs;
 boolean row_true(int row)
 {
     int j;
-    for (int j = 0; j < 15; j++)
+    for (int j = 0; j < number_of_total_LICs; j++)
     {
         if (PUM[row][j] == 0)
             return 0;
@@ -860,7 +861,7 @@ function to generate the Final Unlocking Vector (FUV)
 void generate_FUV()
 {
     int i;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < number_of_total_LICs; i++)
     {
         if (PUV[i] == 0 || row_true(i))
         {
@@ -872,7 +873,7 @@ void generate_FUV()
 void launch_or_not()
 {
     int i;
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < number_of_total_LICs; i++)
     {
         if (FUV[i] == 0)
         {
