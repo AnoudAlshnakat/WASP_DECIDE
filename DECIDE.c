@@ -1,6 +1,7 @@
 #include "DECIDE.h"
 #include <math.h>
 #include <stdio.h>
+#include <assert.h>
 
 /************************************************************
 LIC_0: 
@@ -775,6 +776,8 @@ boolean LIC_14()
             return 1;
         }
     }
+    //assrtion indroduced to check that at least one of the conditions is not met
+    assert(cond1 ==0 || cond2 ==0);
     return 0;
 }
 
